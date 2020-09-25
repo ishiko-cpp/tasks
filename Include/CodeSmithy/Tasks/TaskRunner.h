@@ -4,8 +4,8 @@
     See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
 */
 
-#ifndef _CODESMITHY_TASKS_TASKRUNNER_H_
-#define _CODESMITHY_TASKS_TASKRUNNER_H_
+#ifndef _CODESMITHYIDE_TASKS_TASKRUNNER_H_
+#define _CODESMITHYIDE_TASKS_TASKRUNNER_H_
 
 #include "Task.h"
 #include <boost/asio/io_context.hpp>
