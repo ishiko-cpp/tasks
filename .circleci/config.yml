@@ -14,10 +14,10 @@ jobs:
           command: cd /CodeSmithyIDE/Tasks/Makefiles/GNUmakefile && make
       - run:
           name: Test build
-          command: cd /CodeSmithyIDE/Tests/Tasks/Makefiles/GNUmakefile && make
+          command: cd /CodeSmithyIDE/Tasks/Tests/Makefiles/GNUmakefile && make
       - run:
           name: Run the tests
-          command: cd /CodeSmithyIDE/Tests/Tasks/Makefiles/GNUmakefile && ./CodeSmithyTasksTests
+          command: cd /CodeSmithyIDE/Tasks/Tests/Makefiles/GNUmakefile && ./CodeSmithyTasksTests
   build:
     docker:
       - image: codesmithy/gcc-build-prerequisites:0.1.0
@@ -32,10 +32,10 @@ jobs:
           command: cd /CodeSmithyIDE/Tasks/Makefiles/GNUmakefile && make
       - run:
           name: Test build
-          command: cd /CodeSmithyIDE/Tests/Tasks/Makefiles/GNUmakefile && make
+          command: cd /CodeSmithyIDE/Tasks/Tests/Makefiles/GNUmakefile && make
       - run:
           name: Run the tests
-          command: cd /CodeSmithyIDE/Tests/Tasks/Makefiles/GNUmakefile && ./CodeSmithyTasksTests
+          command: cd /CodeSmithyIDE/Tasks/Tests/Makefiles/GNUmakefile && ./CodeSmithyTasksTests
 workflows:
   version: 2
   build:
