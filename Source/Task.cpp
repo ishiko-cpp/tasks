@@ -1,13 +1,13 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
+    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
 */
 
 #include "Task.h"
 #include <algorithm>
 
-namespace CodeSmithy
+namespace Ishiko
 {
 
 void Task::Observer::onStatusChanged(const Task& source, EStatus status)

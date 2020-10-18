@@ -1,11 +1,11 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
+    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
 */
 
 #include "TasksTests.h"
-#include "CodeSmithy/Tasks/Tasks.h"
+#include "Ishiko/Tasks/Tasks.h"
 
 using namespace Ishiko::Tests;
 
@@ -20,7 +20,7 @@ TasksTests::TasksTests(const TestNumber& number, const TestEnvironment& environm
 
 void TasksTests::CreationTest1(Test& test)
 {
-    CodeSmithy::Tasks tasks;
+    Ishiko::Tasks tasks;
 
     ISHTF_FAIL_IF_NOT(tasks.size() == 0);
     ISHTF_PASS();
@@ -28,8 +28,8 @@ void TasksTests::CreationTest1(Test& test)
 
 void TasksTests::AddTest1(Test& test)
 {
-    CodeSmithy::Tasks tasks;
-    tasks.add(std::make_shared<CodeSmithy::Task>());
+    Ishiko::Tasks tasks;
+    tasks.add(std::make_shared<Ishiko::Task>());
     
     ISHTF_FAIL_IF_NOT(tasks.size() == 1);
     ISHTF_PASS();
@@ -37,8 +37,8 @@ void TasksTests::AddTest1(Test& test)
 
 void TasksTests::AddObserverTest1(Test& test)
 {
-    CodeSmithy::Tasks tasks;
-    std::shared_ptr<CodeSmithy::Tasks::Observer> observer = std::make_shared<CodeSmithy::Tasks::Observer>();
+    Ishiko::Tasks tasks;
+    std::shared_ptr<Ishiko::Tasks::Observer> observer = std::make_shared<Ishiko::Tasks::Observer>();
     tasks.observers().add(observer);
 
     ISHTF_PASS();
@@ -46,8 +46,8 @@ void TasksTests::AddObserverTest1(Test& test)
 
 void TasksTests::RemoveObserverTest1(Test& test)
 {
-    CodeSmithy::Tasks tasks;
-    std::shared_ptr<CodeSmithy::Tasks::Observer> observer = std::make_shared<CodeSmithy::Tasks::Observer>();
+    Ishiko::Tasks tasks;
+    std::shared_ptr<Ishiko::Tasks::Observer> observer = std::make_shared<Ishiko::Tasks::Observer>();
     tasks.observers().add(observer);
     tasks.observers().remove(observer);
 

@@ -1,11 +1,11 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
+    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
 */
 
-#ifndef _CODESMITHY_TASKS_TASKRUNNER_H_
-#define _CODESMITHY_TASKS_TASKRUNNER_H_
+#ifndef _ISHIKO_TASKS_TASKRUNNER_H_
+#define _ISHIKO_TASKS_TASKRUNNER_H_
 
 #include "Task.h"
 #include <boost/asio/io_context.hpp>
@@ -13,7 +13,7 @@
 #include <thread>
 #include <vector>
 
-namespace CodeSmithy
+namespace Ishiko
 {
 
 class TaskRunner

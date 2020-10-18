@@ -72,28 +72,28 @@ ISHIKO_CPP_COLLECTIONS_ROOT ?= $(ISHIKO_CPP)/Collections
 
 # ------------
 
-all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyTasks-d,CodeSmithyTasks).a
+all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoTasks-d,IshikoTasks).a
 
-../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyTasks-d,CodeSmithyTasks).a: $(_builddir)CodeSmithyTasks_Task.o $(_builddir)CodeSmithyTasks_SyncFunctionTask.o $(_builddir)CodeSmithyTasks_Tasks.o $(_builddir)CodeSmithyTasks_TaskRunner.o
-	$(AR) rc $@ $(_builddir)CodeSmithyTasks_Task.o $(_builddir)CodeSmithyTasks_SyncFunctionTask.o $(_builddir)CodeSmithyTasks_Tasks.o $(_builddir)CodeSmithyTasks_TaskRunner.o
+../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoTasks-d,IshikoTasks).a: $(_builddir)IshikoTasks_Task.o $(_builddir)IshikoTasks_SyncFunctionTask.o $(_builddir)IshikoTasks_Tasks.o $(_builddir)IshikoTasks_TaskRunner.o
+	$(AR) rc $@ $(_builddir)IshikoTasks_Task.o $(_builddir)IshikoTasks_SyncFunctionTask.o $(_builddir)IshikoTasks_Tasks.o $(_builddir)IshikoTasks_TaskRunner.o
 	$(RANLIB) $@
 
-$(_builddir)CodeSmithyTasks_Task.o: ../../Source/Task.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/CodeSmithy/Tasks -std=c++11 ../../Source/Task.cpp
+$(_builddir)IshikoTasks_Task.o: ../../Source/Task.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/Task.cpp
 
-$(_builddir)CodeSmithyTasks_SyncFunctionTask.o: ../../Source/SyncFunctionTask.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/CodeSmithy/Tasks -std=c++11 ../../Source/SyncFunctionTask.cpp
+$(_builddir)IshikoTasks_SyncFunctionTask.o: ../../Source/SyncFunctionTask.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/SyncFunctionTask.cpp
 
-$(_builddir)CodeSmithyTasks_Tasks.o: ../../Source/Tasks.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/CodeSmithy/Tasks -std=c++11 ../../Source/Tasks.cpp
+$(_builddir)IshikoTasks_Tasks.o: ../../Source/Tasks.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/Tasks.cpp
 
-$(_builddir)CodeSmithyTasks_TaskRunner.o: ../../Source/TaskRunner.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/CodeSmithy/Tasks -std=c++11 ../../Source/TaskRunner.cpp
+$(_builddir)IshikoTasks_TaskRunner.o: ../../Source/TaskRunner.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/TaskRunner.cpp
 
 clean:
 	rm -f $(_builddir)*.o
 	rm -f $(_builddir)*.d
-	rm -f ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),CodeSmithyTasks-d,CodeSmithyTasks).a
+	rm -f ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoTasks-d,IshikoTasks).a
 
 .PHONY: all clean
 
