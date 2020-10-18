@@ -1,16 +1,16 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
+    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
 */
 
-#ifndef _CODESMITHYIDE_TASKS_SYNCFUNCTIONTASK_H_
-#define _CODESMITHYIDE_TASKS_SYNCFUNCTIONTASK_H_
+#ifndef _ISHIKO_TASKS_SYNCFUNCTIONTASK_H_
+#define _ISHIKO_TASKS_SYNCFUNCTIONTASK_H_
 
 #include "Task.h"
 #include <functional>
 
-namespace CodeSmithy
+namespace Ishiko
 {
 
 class SyncFunctionTask : public Task

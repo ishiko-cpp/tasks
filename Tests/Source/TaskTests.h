@@ -1,14 +1,14 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
+    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
 */
 
-#ifndef _CODESMITHYIDE_TEST_TASKS_TASKTESTS_H_
-#define _CODESMITHYIDE_TEST_TASKS_TASKTESTS_H_
+#ifndef _ISHIKO_TEST_TASKS_TASKTESTS_H_
+#define _ISHIKO_TEST_TASKS_TASKTESTS_H_
 
 #include "Ishiko/TestFramework/TestFrameworkCore.h"
-#include "CodeSmithy/Tasks/Task.h"
+#include "Ishiko/Tasks/Task.h"
 
 class TaskTests : public Ishiko::Tests::TestSequence
 {
@@ -19,17 +19,18 @@ private:
     static void CreationTest1(Ishiko::Tests::Test& test);
     static void RunTest1(Ishiko::Tests::Test& test);
     static void RunTest2(Ishiko::Tests::Test& test);
+    static void RunTest3(Ishiko::Tests::Test& test);
 };
 
-class TestTaskObserver : public CodeSmithy::Task::Observer
+class TestTaskObserver : public Ishiko::Task::Observer
 {
 public:
-    void onStatusChanged(const CodeSmithy::Task& source, CodeSmithy::Task::EStatus status) override;
+    void onStatusChanged(const Ishiko::Task& source, Ishiko::Task::EStatus status) override;
 
-    const std::vector<CodeSmithy::Task::EStatus> statuses() const;
+    const std::vector<Ishiko::Task::EStatus> statuses() const;
 
 public:
-    std::vector<CodeSmithy::Task::EStatus> m_statuses;
+    std::vector<Ishiko::Task::EStatus> m_statuses;
 };
 
 #endif

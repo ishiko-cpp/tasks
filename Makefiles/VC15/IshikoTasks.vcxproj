@@ -21,32 +21,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1CC0E1D7-459A-5AEE-B493-555FB6032103}</ProjectGuid>
+    <ProjectGuid>{BF52AC18-E43F-5F01-92AF-7165CE49A212}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>CodeSmithyTasksTests</RootNamespace>
-    <ProjectName>CodeSmithyTasksTests</ProjectName>
+    <RootNamespace>IshikoTasks</RootNamespace>
+    <ProjectName>IshikoTasks</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v141</PlatformToolset>
@@ -68,47 +68,47 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
+    <TargetName>IshikoTasks-d</TargetName>
+    <OutDir>..\Bakefile\..\..\Lib\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
+    <TargetName>IshikoTasks-d</TargetName>
+    <OutDir>..\Bakefile\..\..\Lib\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bakefile\..\..\Lib\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bakefile\..\..\Lib\$(Platform)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(BOOST);$(CODESMITHYIDE)/Tasks\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);..\..\Include\Ishiko\Tasks</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP)/Collections\Lib\$(Platform);$(BOOST)\stage\lib;$(CODESMITHYIDE)/Tasks\Lib\$(Platform);$(ISHIKO_CPP)/Errors\Lib\$(Platform);$(ISHIKO_CPP)/Process\Lib\$(Platform);$(ISHIKO_CPP)/TestFramework\Lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(BOOST);$(CODESMITHYIDE)/Tasks\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);..\..\Include\Ishiko\Tasks</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP)/Collections\Lib\$(Platform);$(BOOST)\stage\lib;$(CODESMITHYIDE)/Tasks\Lib\$(Platform);$(ISHIKO_CPP)/Errors\Lib\$(Platform);$(ISHIKO_CPP)/Process\Lib\$(Platform);$(ISHIKO_CPP)/TestFramework\Lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,18 +117,17 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(BOOST);$(CODESMITHYIDE)/Tasks\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);..\..\Include\Ishiko\Tasks</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP)/Collections\Lib\$(Platform);$(BOOST)\stage\lib;$(CODESMITHYIDE)/Tasks\Lib\$(Platform);$(ISHIKO_CPP)/Errors\Lib\$(Platform);$(ISHIKO_CPP)/Process\Lib\$(Platform);$(ISHIKO_CPP)/TestFramework\Lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,32 +136,31 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(BOOST);$(CODESMITHYIDE)/Tasks\Include;$(ISHIKO_CPP)/Errors\Include;$(ISHIKO_CPP)/Process\Include;$(ISHIKO_CPP)/TestFramework\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/Collections\Include;$(ISHIKO_CPP)/Errors\Include;$(BOOST);..\..\Include\Ishiko\Tasks</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>$(ISHIKO_CPP)/Collections\Lib\$(Platform);$(BOOST)\stage\lib;$(CODESMITHYIDE)/Tasks\Lib\$(Platform);$(ISHIKO_CPP)/Errors\Lib\$(Platform);$(ISHIKO_CPP)/Process\Lib\$(Platform);$(ISHIKO_CPP)/TestFramework\Lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\main.cpp" />
-    <ClCompile Include="..\..\Source\TaskTests.cpp" />
-    <ClCompile Include="..\..\Source\SyncFunctionTaskTests.cpp" />
-    <ClCompile Include="..\..\Source\TasksTests.cpp" />
-    <ClCompile Include="..\..\Source\TaskRunnerTests.cpp" />
+    <ClCompile Include="..\..\Source\Task.cpp" />
+    <ClCompile Include="..\..\Source\SyncFunctionTask.cpp" />
+    <ClCompile Include="..\..\Source\Tasks.cpp" />
+    <ClCompile Include="..\..\Source\TaskRunner.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\TaskTests.h" />
-    <ClInclude Include="..\..\Source\SyncFunctionTaskTests.h" />
-    <ClInclude Include="..\..\Source\TasksTests.h" />
-    <ClInclude Include="..\..\Source\TaskRunnerTests.h" />
+    <ClInclude Include="..\..\Include\Ishiko\Tasks\Task.h" />
+    <ClInclude Include="..\..\Include\Ishiko\Tasks\SyncFunctionTask.h" />
+    <ClInclude Include="..\..\Include\Ishiko\Tasks\Tasks.h" />
+    <ClInclude Include="..\..\Include\Ishiko\Tasks\TaskRunner.h" />
+    <ClInclude Include="..\..\Include\Ishiko\Tasks\linkoptions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

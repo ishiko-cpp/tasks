@@ -1,13 +1,13 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
+    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
 */
 
 #include "Task.h"
 #include <algorithm>
 
-namespace CodeSmithy
+namespace Ishiko
 {
 
 void Task::Observer::onStatusChanged(const Task& source, EStatus status)
@@ -91,8 +91,15 @@ void Task::run()
 {
     m_status = EStatus::eRunning;
     observers().notifyStatusChanged(*this, m_status);
-    doRun();
-    m_status = EStatus::eCompleted;
+    try
+    {
+        doRun();
+        m_status = EStatus::eCompleted;
+    }
+    catch (...)
+    {
+        m_status = EStatus::eFailed;
+    }
     observers().notifyStatusChanged(*this, m_status);
 }
 

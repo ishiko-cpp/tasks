@@ -1,17 +1,18 @@
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/Boost.bkl;
 import $(ishikopath)/Collections/Include/Ishiko/IshikoCollections.bkl;
+import $(ishikopath)/Errors/Include/Ishiko/Errors.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
 
 gnu.makefile = ../GNUmakefile/GNUmakefile;
-vs2017.solutionfile = ../VC15/CodeSmithyTasks.sln;
-vs2015.solutionfile = ../VC14/CodeSmithyTasks.sln;
-vs2013.solutionfile = ../VC12/CodeSmithyTasks.sln;
+vs2017.solutionfile = ../VC15/IshikoTasks.sln;
+vs2015.solutionfile = ../VC14/IshikoTasks.sln;
+vs2013.solutionfile = ../VC12/IshikoTasks.sln;
 
-library CodeSmithyTasks : IshikoCollections, Boost
+library IshikoTasks : IshikoCollections, IshikoErrors, Boost
 {
-    includedirs += ../../Include/CodeSmithy/Tasks;
+    includedirs += ../../Include/Ishiko/Tasks;
 
     if ($(toolset) == gnu)
     {
@@ -27,17 +28,17 @@ library CodeSmithyTasks : IshikoCollections, Boost
 
     if ($(config) == Debug)
     {
-        basename = CodeSmithyTasks-d;
+        basename = IshikoTasks-d;
     }
 
     headers
     {
-        ../../Include/CodeSmithy/Tasks/Task.h
-        ../../Include/CodeSmithy/Tasks/SyncFunctionTask.h
-        ../../Include/CodeSmithy/Tasks/Tasks.h
-        ../../Include/CodeSmithy/Tasks/TaskRunner.h
+        ../../Include/Ishiko/Tasks/Task.h
+        ../../Include/Ishiko/Tasks/SyncFunctionTask.h
+        ../../Include/Ishiko/Tasks/Tasks.h
+        ../../Include/Ishiko/Tasks/TaskRunner.h
 
-        ../../Include/CodeSmithy/Tasks/linkoptions.h
+        ../../Include/Ishiko/Tasks/linkoptions.h
     }
 
     sources
