@@ -1,6 +1,7 @@
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/Boost.bkl;
 import $(ishikopath)/Collections/Include/Ishiko/IshikoCollections.bkl;
+import $(ishikopath)/Errors/Include/Ishiko/Errors.bkl;
 
 setting CODESMITHYIDE_TASKS_ROOT
 {
@@ -8,7 +9,7 @@ setting CODESMITHYIDE_TASKS_ROOT
     default = '$(CODESMITHYIDE)/Tasks';
 }
 
-template CodeSmithyTasks : IshikoCollections, Boost
+template CodeSmithyTasks : IshikoCollections, IshikoErrors, Boost
 {
     includedirs += $(CODESMITHYIDE_TASKS_ROOT)/Include;
 
