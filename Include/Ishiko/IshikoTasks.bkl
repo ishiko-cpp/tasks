@@ -2,23 +2,23 @@ ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/Boost.bkl;
 import $(ishikopath)/Collections/Include/Ishiko/IshikoCollections.bkl;
 
-setting CODESMITHYIDE_TASKS_ROOT
+setting ISHIKO_CPP_TASKS_ROOT
 {
-    help = "Path to the CodeSmithyIDE/Tasks installation";
-    default = '$(CODESMITHYIDE)/Tasks';
+    help = "Path to the Ishiko/Tasks installation";
+    default = '$(ISHIKO_CPP)/Tasks';
 }
 
-template CodeSmithyTasks : IshikoCollections, Boost
+template IshikoTasks : IshikoCollections, Boost
 {
-    includedirs += $(CODESMITHYIDE_TASKS_ROOT)/Include;
+    includedirs += $(ISHIKO_CPP_TASKS_ROOT)/Include;
 
     if ($(toolset) == gnu)
     {
-        libdirs += $(CODESMITHYIDE_TASKS_ROOT)/Lib;
+        libdirs += $(ISHIKO_CPP_TASKS_ROOT)/Lib;
     }
 
     if ($(toolset) != gnu)
     {
-        libdirs += $(CODESMITHYIDE_TASKS_ROOT)/Lib/$(arch);
+        libdirs += $(ISHIKO_CPP_TASKS_ROOT)/Lib/$(arch);
     }
 }
