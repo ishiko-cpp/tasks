@@ -20,7 +20,8 @@ public:
     {
         ePending,
         eRunning,
-        eCompleted
+        eCompleted,
+        eFailed
     };
 
     class Observer

@@ -91,8 +91,15 @@ void Task::run()
 {
     m_status = EStatus::eRunning;
     observers().notifyStatusChanged(*this, m_status);
-    doRun();
-    m_status = EStatus::eCompleted;
+    try
+    {
+        doRun();
+        m_status = EStatus::eCompleted;
+    }
+    catch (...)
+    {
+        m_status = EStatus::eFailed;
+    }
     observers().notifyStatusChanged(*this, m_status);
 }
 
