@@ -19,6 +19,7 @@ private:
     static void CreationTest1(Ishiko::Tests::Test& test);
     static void RunTest1(Ishiko::Tests::Test& test);
     static void RunTest2(Ishiko::Tests::Test& test);
+    static void RunTest3(Ishiko::Tests::Test& test);
 };
 
 class TestTaskObserver : public CodeSmithy::Task::Observer

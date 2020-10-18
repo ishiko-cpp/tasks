@@ -5,6 +5,7 @@
 */
 
 #include "TaskTests.h"
+#include "CodeSmithy/Tasks/SyncFunctionTask.h"
 
 using namespace Ishiko::Tests;
 
@@ -14,13 +15,14 @@ TaskTests::TaskTests(const TestNumber& number, const TestEnvironment& environmen
     append<HeapAllocationErrorsTest>("Creation test 1", CreationTest1);
     append<HeapAllocationErrorsTest>("run test 1", RunTest1);
     append<HeapAllocationErrorsTest>("run test 2", RunTest2);
+    append<HeapAllocationErrorsTest>("run test 3", RunTest3);
 }
 
 void TaskTests::CreationTest1(Test& test)
 {
     CodeSmithy::Task task;
 
-    ISHTF_FAIL_IF_NOT(task.status() == CodeSmithy::Task::EStatus::ePending);
+    ISHTF_FAIL_IF_NEQ(task.status(), CodeSmithy::Task::EStatus::ePending);
     ISHTF_PASS();
 }
 
@@ -29,11 +31,20 @@ void TaskTests::RunTest1(Test& test)
     CodeSmithy::Task task;
     task.run();
 
-    ISHTF_FAIL_IF_NOT(task.status() == CodeSmithy::Task::EStatus::eCompleted);
+    ISHTF_FAIL_IF_NEQ(task.status(), CodeSmithy::Task::EStatus::eCompleted);
     ISHTF_PASS();
 }
 
 void TaskTests::RunTest2(Test& test)
+{
+    CodeSmithy::SyncFunctionTask task([]() { throw std::exception(); });
+    task.run();
+
+    ISHTF_FAIL_IF_NEQ(task.status(), CodeSmithy::Task::EStatus::eFailed);
+    ISHTF_PASS();
+}
+
+void TaskTests::RunTest3(Test& test)
 {
     CodeSmithy::Task task;
 
@@ -42,10 +53,10 @@ void TaskTests::RunTest2(Test& test)
 
     task.run();
 
-    ISHTF_FAIL_IF_NOT(task.status() == CodeSmithy::Task::EStatus::eCompleted);
-    ISHTF_FAIL_IF_NOT(observer->statuses().size() == 2);
-    ISHTF_FAIL_IF_NOT(observer->statuses()[0] == CodeSmithy::Task::EStatus::eRunning);
-    ISHTF_FAIL_IF_NOT(observer->statuses()[1] == CodeSmithy::Task::EStatus::eCompleted);
+    ISHTF_FAIL_IF_NEQ(task.status(), CodeSmithy::Task::EStatus::eCompleted);
+    ISHTF_FAIL_IF_NEQ(observer->statuses().size(), 2);
+    ISHTF_FAIL_IF_NEQ(observer->statuses()[0], CodeSmithy::Task::EStatus::eRunning);
+    ISHTF_FAIL_IF_NEQ(observer->statuses()[1], CodeSmithy::Task::EStatus::eCompleted);
     ISHTF_PASS();
 }
 
