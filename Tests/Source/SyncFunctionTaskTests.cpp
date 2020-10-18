@@ -1,11 +1,11 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/CodeSmithyIDE/Tasks/blob/master/LICENSE.txt
+    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
 */
 
 #include "SyncFunctionTaskTests.h"
-#include "CodeSmithy/Tasks/SyncFunctionTask.h"
+#include "Ishiko/Tasks/SyncFunctionTask.h"
 
 using namespace Ishiko::Tests;
 
@@ -18,15 +18,15 @@ SyncFunctionTaskTests::SyncFunctionTaskTests(const TestNumber& number, const Tes
 
 void SyncFunctionTaskTests::CreationTest1(Test& test)
 {
-    CodeSmithy::SyncFunctionTask task([]() -> void {});
+    Ishiko::SyncFunctionTask task([]() -> void {});
     ISHTF_PASS();
 }
 
 void SyncFunctionTaskTests::RunTest1(Test& test)
 {
-    CodeSmithy::SyncFunctionTask task([]() -> void {});
+    Ishiko::SyncFunctionTask task([]() -> void {});
     task.run();
 
-    ISHTF_FAIL_IF_NOT(task.status() == CodeSmithy::Task::EStatus::eCompleted);
+    ISHTF_FAIL_IF_NOT(task.status() == Ishiko::Task::EStatus::eCompleted);
     ISHTF_PASS();
 }
