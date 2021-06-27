@@ -17,19 +17,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Include\Ishiko\Tasks\Task.h">
+    <ClInclude Include="..\..\include\Ishiko\Tasks\Task.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\Tasks\SyncFunctionTask.h">
+    <ClInclude Include="..\..\include\Ishiko\Tasks\SyncFunctionTask.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\Tasks\Tasks.h">
+    <ClInclude Include="..\..\include\Ishiko\Tasks\Tasks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\Tasks\TaskRunner.h">
+    <ClInclude Include="..\..\include\Ishiko\Tasks\TaskRunner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\Ishiko\Tasks\linkoptions.h">
+    <ClInclude Include="..\..\include\Ishiko\Tasks\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

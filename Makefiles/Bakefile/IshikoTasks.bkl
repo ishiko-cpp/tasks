@@ -1,7 +1,7 @@
 ishikopath = envvar("ISHIKO_CPP");
-import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/Boost.bkl;
-import $(ishikopath)/Collections/Include/Ishiko/IshikoCollections.bkl;
-import $(ishikopath)/Errors/Include/Ishiko/Errors.bkl;
+import $(ishikopath)/collections/include/Ishiko/Collections.bkl;
+import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
+import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
 
@@ -12,7 +12,7 @@ vs2013.solutionfile = ../VC12/IshikoTasks.sln;
 
 library IshikoTasks : IshikoCollections, IshikoErrors, Boost
 {
-    includedirs += ../../Include/Ishiko/Tasks;
+    includedirs += ../../include/Ishiko/Tasks;
 
     if ($(toolset) == gnu)
     {
@@ -33,12 +33,11 @@ library IshikoTasks : IshikoCollections, IshikoErrors, Boost
 
     headers
     {
-        ../../Include/Ishiko/Tasks/Task.h
-        ../../Include/Ishiko/Tasks/SyncFunctionTask.h
-        ../../Include/Ishiko/Tasks/Tasks.h
-        ../../Include/Ishiko/Tasks/TaskRunner.h
-
-        ../../Include/Ishiko/Tasks/linkoptions.h
+        ../../include/Ishiko/Tasks/Task.h
+        ../../include/Ishiko/Tasks/SyncFunctionTask.h
+        ../../include/Ishiko/Tasks/Tasks.h
+        ../../include/Ishiko/Tasks/TaskRunner.h
+        ../../include/Ishiko/Tasks/linkoptions.h
     }
 
     sources
