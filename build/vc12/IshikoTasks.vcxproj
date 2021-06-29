@@ -150,10 +150,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Task.cpp" />
-    <ClCompile Include="..\..\Source\SyncFunctionTask.cpp" />
-    <ClCompile Include="..\..\Source\Tasks.cpp" />
-    <ClCompile Include="..\..\Source\TaskRunner.cpp" />
+    <ClCompile Include="..\..\src\Task.cpp" />
+    <ClCompile Include="..\..\src\SyncFunctionTask.cpp" />
+    <ClCompile Include="..\..\src\Tasks.cpp" />
+    <ClCompile Include="..\..\src\TaskRunner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\Tasks\Task.h" />
