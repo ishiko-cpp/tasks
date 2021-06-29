@@ -34,16 +34,16 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\Task.cpp">
+    <ClCompile Include="..\..\src\Task.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\SyncFunctionTask.cpp">
+    <ClCompile Include="..\..\src\SyncFunctionTask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Tasks.cpp">
+    <ClCompile Include="..\..\src\Tasks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TaskRunner.cpp">
+    <ClCompile Include="..\..\src\TaskRunner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

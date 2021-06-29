@@ -81,17 +81,17 @@ all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoTasks-d,
 	$(AR) rc $@ $(_builddir)IshikoTasks_Task.o $(_builddir)IshikoTasks_SyncFunctionTask.o $(_builddir)IshikoTasks_Tasks.o $(_builddir)IshikoTasks_TaskRunner.o
 	$(RANLIB) $@
 
-$(_builddir)IshikoTasks_Task.o: ../../Source/Task.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/Task.cpp
+$(_builddir)IshikoTasks_Task.o: ../../src/Task.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../src/Task.cpp
 
-$(_builddir)IshikoTasks_SyncFunctionTask.o: ../../Source/SyncFunctionTask.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/SyncFunctionTask.cpp
+$(_builddir)IshikoTasks_SyncFunctionTask.o: ../../src/SyncFunctionTask.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../src/SyncFunctionTask.cpp
 
-$(_builddir)IshikoTasks_Tasks.o: ../../Source/Tasks.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/Tasks.cpp
+$(_builddir)IshikoTasks_Tasks.o: ../../src/Tasks.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../src/Tasks.cpp
 
-$(_builddir)IshikoTasks_TaskRunner.o: ../../Source/TaskRunner.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/TaskRunner.cpp
+$(_builddir)IshikoTasks_TaskRunner.o: ../../src/TaskRunner.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../src/TaskRunner.cpp
 
 clean:
 	rm -f $(_builddir)*.o
