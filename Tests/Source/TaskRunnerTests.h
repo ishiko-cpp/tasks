@@ -1,13 +1,13 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
+    See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
 #ifndef _ISHIKO_TEST_TASKS_TASKRUNNERTESTS_H_
 #define _ISHIKO_TEST_TASKS_TASKRUNNERTESTS_H_
 
-#include "Ishiko/TestFramework/TestFrameworkCore.h"
+#include <Ishiko/Tests/Core.h>
 
 class TaskRunnerTests : public Ishiko::Tests::TestSequence
 {
