@@ -1,0 +1,50 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/collections/include/Ishiko/Collections.bkl;
+import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
+import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
+
+toolsets = gnu vs2017 vs2015 vs2013;
+
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2017.solutionfile = ../vc15/IshikoTasks.sln;
+vs2015.solutionfile = ../vc14/IshikoTasks.sln;
+vs2013.solutionfile = ../vc12/IshikoTasks.sln;
+
+library IshikoTasks : IshikoCollections, IshikoErrors, Boost
+{
+    includedirs += ../../include/Ishiko/Tasks;
+
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        outputdir = ../../lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        archs = x86 x86_64;
+        outputdir = ../../lib/$(arch);
+    }
+
+    if ($(config) == Debug)
+    {
+        basename = IshikoTasks-d;
+    }
+
+    headers
+    {
+        ../../include/Ishiko/Tasks/Task.h
+        ../../include/Ishiko/Tasks/SyncFunctionTask.h
+        ../../include/Ishiko/Tasks/Tasks.h
+        ../../include/Ishiko/Tasks/TaskRunner.h
+        ../../include/Ishiko/Tasks/linkoptions.h
+    }
+
+    sources
+    {
+        ../../src/Task.cpp
+        ../../src/SyncFunctionTask.cpp
+        ../../src/Tasks.cpp
+        ../../src/TaskRunner.cpp
+    }
+}
