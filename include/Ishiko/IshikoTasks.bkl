@@ -14,11 +14,11 @@ template IshikoTasks : IshikoCollections, Boost
 
     if ($(toolset) == gnu)
     {
-        libdirs += $(ISHIKO_CPP_TASKS_ROOT)/Lib;
+        libdirs += $(ISHIKO_CPP_TASKS_ROOT)/lib;
     }
 
     if ($(toolset) != gnu)
     {
-        libdirs += $(ISHIKO_CPP_TASKS_ROOT)/Lib/$(arch);
+        libdirs += $(ISHIKO_CPP_TASKS_ROOT)/lib/$(arch);
     }
 }
