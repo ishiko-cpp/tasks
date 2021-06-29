@@ -1,14 +1,14 @@
 /*
-    Copyright (c) 2015-2020 Xavier Leclercq
+    Copyright (c) 2015-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
+    See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
 #include "TaskTests.h"
 #include "SyncFunctionTaskTests.h"
 #include "TasksTests.h"
 #include "TaskRunnerTests.h"
-#include "Ishiko/TestFramework/TestFrameworkCore.h"
+#include <Ishiko/Tests/Core.h>
 
 using namespace Ishiko::Tests;
 

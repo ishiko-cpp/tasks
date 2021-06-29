@@ -37,9 +37,9 @@ endif
 # Additionally, this makefile is customizable with the following
 # settings:
 #
-#      BOOST_ROOT                   Path to the Boost installation
 #      ISHIKO_CPP_COLLECTIONS_ROOT  Path to the Ishiko Collections installation
 #      ISHIKO_CPP_ERRORS_ROOT       Path to the Ishiko Errors installation
+#      ISHIKO_CPP_BOOST_ROOT        Path to the Boost installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -66,12 +66,12 @@ endif
 # Configurable settings:
 # 
 
-# Path to the Boost installation
-BOOST_ROOT ?= $(BOOST)
 # Path to the Ishiko Collections installation
-ISHIKO_CPP_COLLECTIONS_ROOT ?= $(ISHIKO_CPP)/Collections
+ISHIKO_CPP_COLLECTIONS_ROOT ?= $(ISHIKO_CPP)/collections
 # Path to the Ishiko Errors installation
-ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/Errors
+ISHIKO_CPP_ERRORS_ROOT ?= $(ISHIKO_CPP)/errors
+# Path to the Boost installation
+ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
 
 # ------------
 
@@ -82,16 +82,16 @@ all: ../Bakefile/../../Lib/lib$(if $(call _equal,$(config),Debug),IshikoTasks-d,
 	$(RANLIB) $@
 
 $(_builddir)IshikoTasks_Task.o: ../../Source/Task.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/Task.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/Task.cpp
 
 $(_builddir)IshikoTasks_SyncFunctionTask.o: ../../Source/SyncFunctionTask.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/SyncFunctionTask.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/SyncFunctionTask.cpp
 
 $(_builddir)IshikoTasks_Tasks.o: ../../Source/Tasks.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/Tasks.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/Tasks.cpp
 
 $(_builddir)IshikoTasks_TaskRunner.o: ../../Source/TaskRunner.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/Include -I$(ISHIKO_CPP_ERRORS_ROOT)/Include -I$(BOOST_ROOT)/include -I../../Include/Ishiko/Tasks -std=c++11 ../../Source/TaskRunner.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Tasks -std=c++11 ../../Source/TaskRunner.cpp
 
 clean:
 	rm -f $(_builddir)*.o

@@ -1,7 +1,7 @@
 /*
     Copyright (c) 2018-2020 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
+    See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
 #include "TasksTests.h"
