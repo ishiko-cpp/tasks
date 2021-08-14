@@ -7,8 +7,8 @@
 #include "TasksTests.h"
 #include "Ishiko/UserTasks/Tasks.h"
 
-using namespace Ishiko;
 using namespace Ishiko::Tests;
+using namespace Ishiko::UserTasks;
 
 TasksTests::TasksTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "Tasks tests", environment)
@@ -30,7 +30,7 @@ void TasksTests::CreationTest1(Test& test)
 void TasksTests::AddTest1(Test& test)
 {
     Tasks tasks;
-    tasks.add(std::make_shared<Ishiko::Task>());
+    tasks.add(std::make_shared<Task>());
     
     ISHIKO_FAIL_IF_NOT(tasks.size() == 1);
     ISHIKO_PASS();
@@ -39,7 +39,7 @@ void TasksTests::AddTest1(Test& test)
 void TasksTests::AddObserverTest1(Test& test)
 {
     Tasks tasks;
-    std::shared_ptr<Ishiko::Tasks::Observer> observer = std::make_shared<Ishiko::Tasks::Observer>();
+    std::shared_ptr<Tasks::Observer> observer = std::make_shared<Tasks::Observer>();
     tasks.observers().add(observer);
 
     ISHIKO_PASS();
@@ -48,7 +48,7 @@ void TasksTests::AddObserverTest1(Test& test)
 void TasksTests::RemoveObserverTest1(Test& test)
 {
     Tasks tasks;
-    std::shared_ptr<Ishiko::Tasks::Observer> observer = std::make_shared<Ishiko::Tasks::Observer>();
+    std::shared_ptr<Tasks::Observer> observer = std::make_shared<Tasks::Observer>();
     tasks.observers().add(observer);
     tasks.observers().remove(observer);
 

@@ -12,6 +12,8 @@
 
 namespace Ishiko
 {
+namespace UserTasks
+{
 
 class Task
 {
@@ -63,7 +65,6 @@ private:
 };
 
 }
-
-#include "linkoptions.h"
+}
 
 #endif

@@ -25,18 +25,18 @@ program IshikoUserTasksTests : IshikoUserTasks, IshikoTestsCore
 
     headers
     {
-        ../../Source/TaskTests.h
-        ../../Source/SyncFunctionTaskTests.h
-        ../../Source/TasksTests.h
-        ../../Source/TaskRunnerTests.h
+        ../../src/TaskTests.h
+        ../../src/SyncFunctionTaskTests.h
+        ../../src/TasksTests.h
+        ../../src/TaskRunnerTests.h
     }
 
     sources
     {
-        ../../Source/main.cpp
-        ../../Source/TaskTests.cpp
-        ../../Source/SyncFunctionTaskTests.cpp
-        ../../Source/TasksTests.cpp
-        ../../Source/TaskRunnerTests.cpp
+        ../../src/main.cpp
+        ../../src/TaskTests.cpp
+        ../../src/SyncFunctionTaskTests.cpp
+        ../../src/TasksTests.cpp
+        ../../src/TaskRunnerTests.cpp
     }
 }

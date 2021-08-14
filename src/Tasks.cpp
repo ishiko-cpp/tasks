@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
@@ -7,6 +7,8 @@
 #include "Tasks.h"
 
 namespace Ishiko
+{
+namespace UserTasks
 {
 
 size_t Tasks::size() const
@@ -24,4 +26,5 @@ Collections::ObservableVector<std::shared_ptr<Task>, Tasks>::Observers& Tasks::o
     return Collections::ObservableVector<std::shared_ptr<Task>, Tasks>::observers();
 }
 
+}
 }

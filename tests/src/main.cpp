@@ -8,6 +8,7 @@
 #include "SyncFunctionTaskTests.h"
 #include "TasksTests.h"
 #include "TaskRunnerTests.h"
+#include "Ishiko/UserTasks/linkoptions.h"
 #include <Ishiko/Tests/Core.h>
 
 using namespace Ishiko::Tests;
