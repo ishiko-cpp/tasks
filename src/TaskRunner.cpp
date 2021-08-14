@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
@@ -8,6 +8,8 @@
 #include <boost/asio/post.hpp>
 
 namespace Ishiko
+{
+namespace UserTasks
 {
 
 TaskRunner::TaskRunner(size_t numberOfThreads)
@@ -46,4 +48,5 @@ void TaskRunner::post(std::shared_ptr<Task> task)
         });
 }
 
+}
 }

@@ -1,17 +1,19 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_TASKS_TASKS_H_
-#define _ISHIKO_TASKS_TASKS_H_
+#ifndef _ISHIKO_CPP_USERTASKS_TASKS_H_
+#define _ISHIKO_CPP_USERTASKS_TASKS_H_
 
 #include "Task.h"
 #include "Ishiko/Collections/ObservableVector.h"
 #include <memory>
 
 namespace Ishiko
+{
+namespace UserTasks
 {
 
 class Tasks : private Collections::ObservableVector<std::shared_ptr<Task>, Tasks>
@@ -27,7 +29,6 @@ public:
 };
 
 }
-
-#include "linkoptions.h"
+}
 
 #endif
