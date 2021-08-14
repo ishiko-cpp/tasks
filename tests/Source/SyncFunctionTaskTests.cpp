@@ -1,12 +1,13 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
 #include "SyncFunctionTaskTests.h"
-#include "Ishiko/Tasks/SyncFunctionTask.h"
+#include "Ishiko/UserTasks/SyncFunctionTask.h"
 
+using namespace Ishiko;
 using namespace Ishiko::Tests;
 
 SyncFunctionTaskTests::SyncFunctionTaskTests(const TestNumber& number, const TestEnvironment& environment)
@@ -18,15 +19,15 @@ SyncFunctionTaskTests::SyncFunctionTaskTests(const TestNumber& number, const Tes
 
 void SyncFunctionTaskTests::CreationTest1(Test& test)
 {
-    Ishiko::SyncFunctionTask task([]() -> void {});
-    ISHTF_PASS();
+    SyncFunctionTask task([]() -> void {});
+    ISHIKO_PASS();
 }
 
 void SyncFunctionTaskTests::RunTest1(Test& test)
 {
-    Ishiko::SyncFunctionTask task([]() -> void {});
+    SyncFunctionTask task([]() -> void {});
     task.run();
 
-    ISHTF_FAIL_IF_NOT(task.status() == Ishiko::Task::EStatus::eCompleted);
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NOT(task.status() == Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_PASS();
 }

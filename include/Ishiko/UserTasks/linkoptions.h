@@ -1,16 +1,16 @@
 /*
-    Copyright (c) 2016-2020 Xavier Leclercq
+    Copyright (c) 2016-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
+    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_TASKS_LINKOPTIONS_H_
-#define _ISHIKO_TASKS_LINKOPTIONS_H_
+#ifndef _ISHIKO_CPP_USERTASKS_LINKOPTIONS_H_
+#define _ISHIKO_CPP_USERTASKS_LINKOPTIONS_H_
 
 #ifdef _DEBUG
-#pragma comment(lib, "IshikoTasks-d.lib")
+#pragma comment(lib, "IshikoUserTasks-d.lib")
 #else
-#pragma comment(lib, "IshikoTasks.lib")
+#pragma comment(lib, "IshikoUserTasks.lib")
 #endif
 
 #endif
