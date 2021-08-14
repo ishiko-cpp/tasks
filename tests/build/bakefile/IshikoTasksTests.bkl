@@ -1,5 +1,5 @@
-import ../../../include/Ishiko/IshikoTasks.bkl;
 ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/user-tasks/include/Ishiko/IshikoUserTasks.bkl;
 import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
 
 toolsets = gnu vs2017 vs2015 vs2013;
@@ -9,7 +9,7 @@ vs2017.solutionfile = ../vc15/IshikoTasksTests.sln;
 vs2015.solutionfile = ../vc14/IshikoTasksTests.sln;
 vs2013.solutionfile = ../vc12/IshikoTasksTests.sln;
 
-program IshikoTasksTests : IshikoTasks, IshikoTestsCore
+program IshikoTasksTests : IshikoUserTasks, IshikoTestsCore
 {
     if ($(toolset) == gnu)
     {

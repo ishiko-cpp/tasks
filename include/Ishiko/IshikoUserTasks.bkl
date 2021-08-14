@@ -8,7 +8,7 @@ setting ISHIKO_CPP_USERTASKS_ROOT
     default = '$(ISHIKO_CPP)/user-tasks';
 }
 
-template IshikoTasks : IshikoCollections, Boost
+template IshikoUserTasks : IshikoCollections, Boost
 {
     includedirs += $(ISHIKO_CPP_USERTASKS_ROOT)/include;
 
