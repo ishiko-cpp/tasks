@@ -17,33 +17,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\TaskTests.h">
+    <ClInclude Include="..\..\src\TaskTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\SyncFunctionTaskTests.h">
+    <ClInclude Include="..\..\src\SyncFunctionTaskTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TasksTests.h">
+    <ClInclude Include="..\..\src\TasksTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TaskRunnerTests.h">
+    <ClInclude Include="..\..\src\TaskRunnerTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\main.cpp">
+    <ClCompile Include="..\..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TaskTests.cpp">
+    <ClCompile Include="..\..\src\TaskTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\SyncFunctionTaskTests.cpp">
+    <ClCompile Include="..\..\src\SyncFunctionTaskTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TasksTests.cpp">
+    <ClCompile Include="..\..\src\TasksTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TaskRunnerTests.cpp">
+    <ClCompile Include="..\..\src\TaskRunnerTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

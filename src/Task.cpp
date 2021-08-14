@@ -9,6 +9,8 @@
 
 namespace Ishiko
 {
+namespace UserTasks
+{
 
 void Task::Observer::onStatusChanged(const Task& source, EStatus status)
 {
@@ -112,4 +114,5 @@ Task::Observers& Task::observers()
     return m_observers;
 }
 
+}
 }

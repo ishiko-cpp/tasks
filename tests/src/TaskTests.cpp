@@ -8,6 +8,7 @@
 #include "Ishiko/UserTasks/SyncFunctionTask.h"
 
 using namespace Ishiko::Tests;
+using namespace Ishiko::UserTasks;
 
 TaskTests::TaskTests(const TestNumber& number, const TestEnvironment& environment)
     : TestSequence(number, "Task tests", environment)
@@ -20,54 +21,54 @@ TaskTests::TaskTests(const TestNumber& number, const TestEnvironment& environmen
 
 void TaskTests::CreationTest1(Test& test)
 {
-    Ishiko::Task task;
+    Task task;
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::ePending);
+    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::ePending);
 
     ISHIKO_PASS();
 }
 
 void TaskTests::RunTest1(Test& test)
 {
-    Ishiko::Task task;
+    Task task;
     task.run();
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
 
     ISHIKO_PASS();
 }
 
 void TaskTests::RunTest2(Test& test)
 {
-    Ishiko::SyncFunctionTask task([]() { throw std::exception(); });
+    SyncFunctionTask task([]() { throw std::exception(); });
     task.run();
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eFailed);
+    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::eFailed);
     ISHIKO_PASS();
 }
 
 void TaskTests::RunTest3(Test& test)
 {
-    Ishiko::Task task;
+    Task task;
 
     std::shared_ptr<TestTaskObserver> observer = std::make_shared<TestTaskObserver>();
     task.observers().add(observer);
 
     task.run();
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
     ISHIKO_FAIL_IF_NEQ(observer->statuses().size(), 2);
-    ISHIKO_FAIL_IF_NEQ(observer->statuses()[0], Ishiko::Task::EStatus::eRunning);
-    ISHIKO_FAIL_IF_NEQ(observer->statuses()[1], Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_FAIL_IF_NEQ(observer->statuses()[0], Task::EStatus::eRunning);
+    ISHIKO_FAIL_IF_NEQ(observer->statuses()[1], Task::EStatus::eCompleted);
     ISHIKO_PASS();
 }
 
-void TestTaskObserver::onStatusChanged(const Ishiko::Task& source, Ishiko::Task::EStatus status)
+void TestTaskObserver::onStatusChanged(const Task& source, Task::EStatus status)
 {
     m_statuses.push_back(status);
 }
 
-const std::vector<Ishiko::Task::EStatus> TestTaskObserver::statuses() const
+const std::vector<Task::EStatus> TestTaskObserver::statuses() const
 {
     return m_statuses;
 }

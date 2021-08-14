@@ -22,15 +22,15 @@ private:
     static void RunTest3(Ishiko::Tests::Test& test);
 };
 
-class TestTaskObserver : public Ishiko::Task::Observer
+class TestTaskObserver : public Ishiko::UserTasks::Task::Observer
 {
 public:
-    void onStatusChanged(const Ishiko::Task& source, Ishiko::Task::EStatus status) override;
+    void onStatusChanged(const Ishiko::UserTasks::Task& source, Ishiko::UserTasks::Task::EStatus status) override;
 
-    const std::vector<Ishiko::Task::EStatus> statuses() const;
+    const std::vector<Ishiko::UserTasks::Task::EStatus> statuses() const;
 
 public:
-    std::vector<Ishiko::Task::EStatus> m_statuses;
+    std::vector<Ishiko::UserTasks::Task::EStatus> m_statuses;
 };
 
 #endif
