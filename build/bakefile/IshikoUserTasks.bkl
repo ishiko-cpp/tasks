@@ -3,16 +3,17 @@ import $(ishikopath)/collections/include/Ishiko/Collections.bkl;
 import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
 import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
-toolsets = gnu vs2017 vs2015 vs2013;
+toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
 gnu.makefile = ../gnumake/GNUmakefile;
-vs2017.solutionfile = ../vc15/IshikoTasks.sln;
-vs2015.solutionfile = ../vc14/IshikoTasks.sln;
-vs2013.solutionfile = ../vc12/IshikoTasks.sln;
+vs2019.solutionfile = ../vc16/IshikoUserTasks.sln;
+vs2017.solutionfile = ../vc15/IshikoUserTasks.sln;
+vs2015.solutionfile = ../vc14/IshikoUserTasks.sln;
+vs2013.solutionfile = ../vc12/IshikoUserTasks.sln;
 
-library IshikoTasks : IshikoCollections, IshikoErrors, Boost
+library IshikoUserTasks : IshikoCollections, IshikoErrors, Boost
 {
-    includedirs += ../../include/Ishiko/Tasks;
+    includedirs += ../../include/Ishiko/UserTasks;
 
     if ($(toolset) == gnu)
     {
@@ -28,16 +29,16 @@ library IshikoTasks : IshikoCollections, IshikoErrors, Boost
 
     if ($(config) == Debug)
     {
-        basename = IshikoTasks-d;
+        basename = IshikoUserTasks-d;
     }
 
     headers
     {
-        ../../include/Ishiko/Tasks/Task.h
-        ../../include/Ishiko/Tasks/SyncFunctionTask.h
-        ../../include/Ishiko/Tasks/Tasks.h
-        ../../include/Ishiko/Tasks/TaskRunner.h
-        ../../include/Ishiko/Tasks/linkoptions.h
+        ../../include/Ishiko/UserTasks/Task.h
+        ../../include/Ishiko/UserTasks/SyncFunctionTask.h
+        ../../include/Ishiko/UserTasks/Tasks.h
+        ../../include/Ishiko/UserTasks/TaskRunner.h
+        ../../include/Ishiko/UserTasks/linkoptions.h
     }
 
     sources
