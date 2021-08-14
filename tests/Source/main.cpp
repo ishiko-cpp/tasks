@@ -14,7 +14,7 @@ using namespace Ishiko::Tests;
 
 int main(int argc, char* argv[])
 {
-    TestHarness theTestHarness("CodeSmithyTasks");
+    TestHarness theTestHarness("IshikoUserTasks");
 
     TestSequence& theTests = theTestHarness.tests();
     theTests.append<TaskTests>();

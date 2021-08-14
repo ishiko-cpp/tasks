@@ -4,11 +4,11 @@
     See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_TEST_TASKS_TASKTESTS_H_
-#define _ISHIKO_TEST_TASKS_TASKTESTS_H_
+#ifndef _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
+#define _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
 
 #include <Ishiko/Tests/Core.h>
-#include "Ishiko/Tasks/Task.h"
+#include "Ishiko/UserTasks/Task.h"
 
 class TaskTests : public Ishiko::Tests::TestSequence
 {

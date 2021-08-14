@@ -1,13 +1,14 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
 #include "TaskRunnerTests.h"
-#include "Ishiko/Tasks/TaskRunner.h"
-#include "Ishiko/Tasks/SyncFunctionTask.h"
+#include "Ishiko/UserTasks/TaskRunner.h"
+#include "Ishiko/UserTasks/SyncFunctionTask.h"
 
+using namespace Ishiko;
 using namespace Ishiko::Tests;
 
 TaskRunnerTests::TaskRunnerTests(const TestNumber& number, const TestEnvironment& environment)
@@ -23,39 +24,41 @@ TaskRunnerTests::TaskRunnerTests(const TestNumber& number, const TestEnvironment
 
 void TaskRunnerTests::CreationTest1(Test& test)
 {
-    Ishiko::TaskRunner taskRunner(1);
-    ISHTF_PASS();
+    TaskRunner taskRunner(1);
+    
+    ISHIKO_PASS();
 }
 
 void TaskRunnerTests::CreationTest2(Test& test)
 {
-    Ishiko::TaskRunner taskRunner(16);
-    ISHTF_PASS();
+    TaskRunner taskRunner(16);
+    
+    ISHIKO_PASS();
 }
 
 void TaskRunnerTests::StartTest1(Test& test)
 {
-    Ishiko::TaskRunner taskRunner(1);
+    TaskRunner taskRunner(1);
     taskRunner.start();
     taskRunner.stop();
     taskRunner.join();
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void TaskRunnerTests::StartTest2(Test& test)
 {
-    Ishiko::TaskRunner taskRunner(16);
+    TaskRunner taskRunner(16);
     taskRunner.start();
     taskRunner.stop();
     taskRunner.join();
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void TaskRunnerTests::PostTest1(Test& test)
 {
-    Ishiko::TaskRunner taskRunner(1);
+    TaskRunner taskRunner(1);
     taskRunner.start();
 
     std::shared_ptr<Ishiko::SyncFunctionTask> task = std::make_shared<Ishiko::SyncFunctionTask>([](){});
@@ -64,13 +67,13 @@ void TaskRunnerTests::PostTest1(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHTF_FAIL_IF_NOT(task->status() == Ishiko::Task::EStatus::eCompleted);
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NOT(task->status() == Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_PASS();
 }
 
 void TaskRunnerTests::PostTest2(Test& test)
 {
-    Ishiko::TaskRunner taskRunner(16);
+    TaskRunner taskRunner(16);
     taskRunner.start();
 
     std::shared_ptr<Ishiko::SyncFunctionTask> task = std::make_shared<Ishiko::SyncFunctionTask>([]() {});
@@ -79,6 +82,6 @@ void TaskRunnerTests::PostTest2(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHTF_FAIL_IF_NOT(task->status() == Ishiko::Task::EStatus::eCompleted);
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NOT(task->status() == Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_PASS();
 }

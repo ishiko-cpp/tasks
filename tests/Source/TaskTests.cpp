@@ -1,11 +1,11 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
 #include "TaskTests.h"
-#include "Ishiko/Tasks/SyncFunctionTask.h"
+#include "Ishiko/UserTasks/SyncFunctionTask.h"
 
 using namespace Ishiko::Tests;
 
@@ -22,9 +22,9 @@ void TaskTests::CreationTest1(Test& test)
 {
     Ishiko::Task task;
 
-    ISHTF_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::ePending);
+    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::ePending);
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void TaskTests::RunTest1(Test& test)
@@ -32,9 +32,9 @@ void TaskTests::RunTest1(Test& test)
     Ishiko::Task task;
     task.run();
 
-    ISHTF_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eCompleted);
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void TaskTests::RunTest2(Test& test)
@@ -42,8 +42,8 @@ void TaskTests::RunTest2(Test& test)
     Ishiko::SyncFunctionTask task([]() { throw std::exception(); });
     task.run();
 
-    ISHTF_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eFailed);
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eFailed);
+    ISHIKO_PASS();
 }
 
 void TaskTests::RunTest3(Test& test)
@@ -55,11 +55,11 @@ void TaskTests::RunTest3(Test& test)
 
     task.run();
 
-    ISHTF_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eCompleted);
-    ISHTF_FAIL_IF_NEQ(observer->statuses().size(), 2);
-    ISHTF_FAIL_IF_NEQ(observer->statuses()[0], Ishiko::Task::EStatus::eRunning);
-    ISHTF_FAIL_IF_NEQ(observer->statuses()[1], Ishiko::Task::EStatus::eCompleted);
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NEQ(task.status(), Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_FAIL_IF_NEQ(observer->statuses().size(), 2);
+    ISHIKO_FAIL_IF_NEQ(observer->statuses()[0], Ishiko::Task::EStatus::eRunning);
+    ISHIKO_FAIL_IF_NEQ(observer->statuses()[1], Ishiko::Task::EStatus::eCompleted);
+    ISHIKO_PASS();
 }
 
 void TestTaskObserver::onStatusChanged(const Ishiko::Task& source, Ishiko::Task::EStatus status)
