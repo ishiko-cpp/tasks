@@ -1,0 +1,24 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/collections/include/Ishiko/Collections.bkl;
+import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
+
+setting ISHIKO_CPP_USERTASKS_ROOT
+{
+    help = "Path to the Ishiko/UserTasks installation";
+    default = '$(ISHIKO_CPP)/user-tasks';
+}
+
+template IshikoUserTasks : IshikoCollections, Boost
+{
+    includedirs += $(ISHIKO_CPP_USERTASKS_ROOT)/include;
+
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(ISHIKO_CPP_USERTASKS_ROOT)/lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(ISHIKO_CPP_USERTASKS_ROOT)/lib/$(arch);
+    }
+}

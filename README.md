@@ -1,6 +1,6 @@
-# Ishiko/C++ Tasks
+# Ishiko/C++ UserTasks
 
-The Ishiko/C++ Tasks component provides functionality to create and run user-defined tasks.
+The Ishiko/C++ UserTasks component provides functionality to create and run user-defined tasks.
 
 # Contents
 
@@ -11,7 +11,7 @@ The Ishiko/C++ Tasks component provides functionality to create and run user-def
 
 # Project Status
 
-[![ishiko-cpp](https://circleci.com/gh/ishiko-cpp/tasks.svg?style=shield)](https://circleci.com/gh/ishiko-cpp/tasks)
+[![ishiko-cpp](https://circleci.com/gh/ishiko-cpp/user-tasks.svg?style=shield)](https://circleci.com/gh/ishiko-cpp/user-tasks)
 
 This project is intended for use by its author only.
 
@@ -27,4 +27,4 @@ None.
 
 Copyright (c) 2016-2021 Xavier Leclercq\
 Released under the MIT License\
-See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
+See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt

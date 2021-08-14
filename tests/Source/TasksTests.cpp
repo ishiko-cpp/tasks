@@ -1,12 +1,13 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
 
 #include "TasksTests.h"
-#include "Ishiko/Tasks/Tasks.h"
+#include "Ishiko/UserTasks/Tasks.h"
 
+using namespace Ishiko;
 using namespace Ishiko::Tests;
 
 TasksTests::TasksTests(const TestNumber& number, const TestEnvironment& environment)
@@ -20,36 +21,36 @@ TasksTests::TasksTests(const TestNumber& number, const TestEnvironment& environm
 
 void TasksTests::CreationTest1(Test& test)
 {
-    Ishiko::Tasks tasks;
+    Tasks tasks;
 
-    ISHTF_FAIL_IF_NOT(tasks.size() == 0);
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NOT(tasks.size() == 0);
+    ISHIKO_PASS();
 }
 
 void TasksTests::AddTest1(Test& test)
 {
-    Ishiko::Tasks tasks;
+    Tasks tasks;
     tasks.add(std::make_shared<Ishiko::Task>());
     
-    ISHTF_FAIL_IF_NOT(tasks.size() == 1);
-    ISHTF_PASS();
+    ISHIKO_FAIL_IF_NOT(tasks.size() == 1);
+    ISHIKO_PASS();
 }
 
 void TasksTests::AddObserverTest1(Test& test)
 {
-    Ishiko::Tasks tasks;
+    Tasks tasks;
     std::shared_ptr<Ishiko::Tasks::Observer> observer = std::make_shared<Ishiko::Tasks::Observer>();
     tasks.observers().add(observer);
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }
 
 void TasksTests::RemoveObserverTest1(Test& test)
 {
-    Ishiko::Tasks tasks;
+    Tasks tasks;
     std::shared_ptr<Ishiko::Tasks::Observer> observer = std::make_shared<Ishiko::Tasks::Observer>();
     tasks.observers().add(observer);
     tasks.observers().remove(observer);
 
-    ISHTF_PASS();
+    ISHIKO_PASS();
 }

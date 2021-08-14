@@ -1,11 +1,11 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-cpp/Tasks/blob/master/LICENSE.txt
+    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_TASKS_TASK_H_
-#define _ISHIKO_TASKS_TASK_H_
+#ifndef _ISHIKO_CPP_USERTASKS_TASK_H_
+#define _ISHIKO_CPP_USERTASKS_TASK_H_
 
 #include <vector>
 #include <memory>
