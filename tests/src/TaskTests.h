@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2018-2021 Xavier Leclercq
+    Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
@@ -7,13 +7,13 @@
 #ifndef _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
 #define _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
 
-#include <Ishiko/Tests/Core.h>
 #include "Ishiko/UserTasks/Task.h"
+#include <Ishiko/Tests/Core.hpp>
 
 class TaskTests : public Ishiko::Tests::TestSequence
 {
 public:
-    TaskTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestEnvironment& environment);
+    TaskTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
 
 private:
     static void CreationTest1(Ishiko::Tests::Test& test);

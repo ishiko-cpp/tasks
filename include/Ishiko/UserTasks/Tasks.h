@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2018-2021 Xavier Leclercq
+    Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
@@ -8,7 +8,7 @@
 #define _ISHIKO_CPP_USERTASKS_TASKS_H_
 
 #include "Task.h"
-#include "Ishiko/Collections/ObservableVector.h"
+#include <Ishiko/Collections.hpp>
 #include <memory>
 
 namespace Ishiko

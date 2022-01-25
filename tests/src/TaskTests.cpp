@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2018-2021 Xavier Leclercq
+    Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
 */
@@ -10,8 +10,8 @@
 using namespace Ishiko::Tests;
 using namespace Ishiko::UserTasks;
 
-TaskTests::TaskTests(const TestNumber& number, const TestEnvironment& environment)
-    : TestSequence(number, "Task tests", environment)
+TaskTests::TaskTests(const TestNumber& number, const TestContext& context)
+    : TestSequence(number, "Task tests", context)
 {
     append<HeapAllocationErrorsTest>("Creation test 1", CreationTest1);
     append<HeapAllocationErrorsTest>("run test 1", RunTest1);
