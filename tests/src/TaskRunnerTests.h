@@ -7,20 +7,20 @@
 #ifndef _ISHIKO_CPP_USERTASKS_TEST_TASKRUNNERTESTS_H_
 #define _ISHIKO_CPP_USERTASKS_TEST_TASKRUNNERTESTS_H_
 
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
-class TaskRunnerTests : public Ishiko::Tests::TestSequence
+class TaskRunnerTests : public Ishiko::TestSequence
 {
 public:
-    TaskRunnerTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
+    TaskRunnerTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void CreationTest1(Ishiko::Tests::Test& test);
-    static void CreationTest2(Ishiko::Tests::Test& test);
-    static void StartTest1(Ishiko::Tests::Test& test);
-    static void StartTest2(Ishiko::Tests::Test& test);
-    static void PostTest1(Ishiko::Tests::Test& test);
-    static void PostTest2(Ishiko::Tests::Test& test);
+    static void CreationTest1(Ishiko::Test& test);
+    static void CreationTest2(Ishiko::Test& test);
+    static void StartTest1(Ishiko::Test& test);
+    static void StartTest2(Ishiko::Test& test);
+    static void PostTest1(Ishiko::Test& test);
+    static void PostTest2(Ishiko::Test& test);
 };
 
 #endif

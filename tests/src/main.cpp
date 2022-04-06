@@ -9,9 +9,9 @@
 #include "TasksTests.h"
 #include "TaskRunnerTests.h"
 #include "Ishiko/UserTasks/linkoptions.h"
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 
 int main(int argc, char* argv[])
 {
