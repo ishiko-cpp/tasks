@@ -8,18 +8,18 @@
 #define _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
 
 #include "Ishiko/UserTasks/Task.h"
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
-class TaskTests : public Ishiko::Tests::TestSequence
+class TaskTests : public Ishiko::TestSequence
 {
 public:
-    TaskTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
+    TaskTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void CreationTest1(Ishiko::Tests::Test& test);
-    static void RunTest1(Ishiko::Tests::Test& test);
-    static void RunTest2(Ishiko::Tests::Test& test);
-    static void RunTest3(Ishiko::Tests::Test& test);
+    static void CreationTest1(Ishiko::Test& test);
+    static void RunTest1(Ishiko::Test& test);
+    static void RunTest2(Ishiko::Test& test);
+    static void RunTest3(Ishiko::Test& test);
 };
 
 class TestTaskObserver : public Ishiko::UserTasks::Task::Observer

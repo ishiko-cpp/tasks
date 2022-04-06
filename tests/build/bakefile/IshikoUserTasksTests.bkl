@@ -1,6 +1,6 @@
 ishikopath = envvar("ISHIKO_CPP");
-import $(ishikopath)/user-tasks/include/Ishiko/IshikoUserTasks.bkl;
-import $(ishikopath)/tests/include/Ishiko/Tests/Core.bkl;
+import $(ishikopath)/test-framework/include/Ishiko/TestFramework/Core.bkl;
+import $(ishikopath)/user-tasks/include/Ishiko/UserTasks.bkl;
 
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
@@ -10,12 +10,12 @@ vs2017.solutionfile = ../vc15/IshikoUserTasksTests.sln;
 vs2015.solutionfile = ../vc14/IshikoUserTasksTests.sln;
 vs2013.solutionfile = ../vc12/IshikoUserTasksTests.sln;
 
-program IshikoUserTasksTests : IshikoUserTasks, IshikoTestsCore
+program IshikoUserTasksTests : IshikoUserTasks, IshikoTestFrameworkCore
 {
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoUserTasks IshikoTestsCore IshikoProcess IshikoErrors boost_filesystem;
+        libs += IshikoUserTasks IshikoTestFrameworkCore IshikoProcess IshikoErrors boost_filesystem;
     }
 
     if ($(toolset) != gnu)

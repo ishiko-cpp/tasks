@@ -7,7 +7,7 @@
 #include "TasksTests.h"
 #include "Ishiko/UserTasks/Tasks.h"
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 using namespace Ishiko::UserTasks;
 
 TasksTests::TasksTests(const TestNumber& number, const TestContext& context)
@@ -23,8 +23,8 @@ void TasksTests::CreationTest1(Test& test)
 {
     Tasks tasks;
 
-    ISHIKO_FAIL_IF_NOT(tasks.size() == 0);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(tasks.size() == 0);
+    ISHIKO_TEST_PASS();
 }
 
 void TasksTests::AddTest1(Test& test)
@@ -32,8 +32,8 @@ void TasksTests::AddTest1(Test& test)
     Tasks tasks;
     tasks.add(std::make_shared<Task>());
     
-    ISHIKO_FAIL_IF_NOT(tasks.size() == 1);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(tasks.size() == 1);
+    ISHIKO_TEST_PASS();
 }
 
 void TasksTests::AddObserverTest1(Test& test)
@@ -42,7 +42,7 @@ void TasksTests::AddObserverTest1(Test& test)
     std::shared_ptr<Tasks::Observer> observer = std::make_shared<Tasks::Observer>();
     tasks.observers().add(observer);
 
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void TasksTests::RemoveObserverTest1(Test& test)
@@ -52,5 +52,5 @@ void TasksTests::RemoveObserverTest1(Test& test)
     tasks.observers().add(observer);
     tasks.observers().remove(observer);
 
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }

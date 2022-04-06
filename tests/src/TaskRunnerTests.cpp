@@ -8,7 +8,7 @@
 #include "Ishiko/UserTasks/TaskRunner.h"
 #include "Ishiko/UserTasks/SyncFunctionTask.h"
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 using namespace Ishiko::UserTasks;
 
 TaskRunnerTests::TaskRunnerTests(const TestNumber& number, const TestContext& context)
@@ -26,14 +26,14 @@ void TaskRunnerTests::CreationTest1(Test& test)
 {
     TaskRunner taskRunner(1);
     
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void TaskRunnerTests::CreationTest2(Test& test)
 {
     TaskRunner taskRunner(16);
     
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void TaskRunnerTests::StartTest1(Test& test)
@@ -43,7 +43,7 @@ void TaskRunnerTests::StartTest1(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void TaskRunnerTests::StartTest2(Test& test)
@@ -53,7 +53,7 @@ void TaskRunnerTests::StartTest2(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void TaskRunnerTests::PostTest1(Test& test)
@@ -67,8 +67,8 @@ void TaskRunnerTests::PostTest1(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHIKO_FAIL_IF_NOT(task->status() == Task::EStatus::eCompleted);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(task->status() == Task::EStatus::eCompleted);
+    ISHIKO_TEST_PASS();
 }
 
 void TaskRunnerTests::PostTest2(Test& test)
@@ -82,6 +82,6 @@ void TaskRunnerTests::PostTest2(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHIKO_FAIL_IF_NOT(task->status() == Task::EStatus::eCompleted);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(task->status() == Task::EStatus::eCompleted);
+    ISHIKO_TEST_PASS();
 }

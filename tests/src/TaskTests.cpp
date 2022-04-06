@@ -7,7 +7,7 @@
 #include "TaskTests.h"
 #include "Ishiko/UserTasks/SyncFunctionTask.h"
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 using namespace Ishiko::UserTasks;
 
 TaskTests::TaskTests(const TestNumber& number, const TestContext& context)
@@ -23,9 +23,9 @@ void TaskTests::CreationTest1(Test& test)
 {
     Task task;
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::ePending);
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::ePending);
 
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void TaskTests::RunTest1(Test& test)
@@ -33,9 +33,9 @@ void TaskTests::RunTest1(Test& test)
     Task task;
     task.run();
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
 
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void TaskTests::RunTest2(Test& test)
@@ -43,8 +43,8 @@ void TaskTests::RunTest2(Test& test)
     SyncFunctionTask task([]() { throw std::exception(); });
     task.run();
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::eFailed);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::eFailed);
+    ISHIKO_TEST_PASS();
 }
 
 void TaskTests::RunTest3(Test& test)
@@ -56,11 +56,11 @@ void TaskTests::RunTest3(Test& test)
 
     task.run();
 
-    ISHIKO_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
-    ISHIKO_FAIL_IF_NEQ(observer->statuses().size(), 2);
-    ISHIKO_FAIL_IF_NEQ(observer->statuses()[0], Task::EStatus::eRunning);
-    ISHIKO_FAIL_IF_NEQ(observer->statuses()[1], Task::EStatus::eCompleted);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
+    ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses().size(), 2);
+    ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses()[0], Task::EStatus::eRunning);
+    ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses()[1], Task::EStatus::eCompleted);
+    ISHIKO_TEST_PASS();
 }
 
 void TestTaskObserver::onStatusChanged(const Task& source, Task::EStatus status)
