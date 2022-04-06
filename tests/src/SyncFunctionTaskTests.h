@@ -7,16 +7,16 @@
 #ifndef _ISHIKO_CPP_USERTASKS_TESTS_SYNCFUNCTIONTASKTESTS_H_
 #define _ISHIKO_CPP_USERTASKS_TESTS_SYNCFUNCTIONTASKTESTS_H_
 
-#include <Ishiko/Tests/Core.hpp>
+#include <Ishiko/TestFramework/Core.hpp>
 
-class SyncFunctionTaskTests : public Ishiko::Tests::TestSequence
+class SyncFunctionTaskTests : public Ishiko::TestSequence
 {
 public:
-    SyncFunctionTaskTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestContext& context);
+    SyncFunctionTaskTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
-    static void CreationTest1(Ishiko::Tests::Test& test);
-    static void RunTest1(Ishiko::Tests::Test& test);
+    static void CreationTest1(Ishiko::Test& test);
+    static void RunTest1(Ishiko::Test& test);
 };
 
 #endif

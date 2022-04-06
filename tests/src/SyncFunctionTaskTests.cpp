@@ -7,7 +7,7 @@
 #include "SyncFunctionTaskTests.h"
 #include "Ishiko/UserTasks/SyncFunctionTask.h"
 
-using namespace Ishiko::Tests;
+using namespace Ishiko;
 using namespace Ishiko::UserTasks;
 
 SyncFunctionTaskTests::SyncFunctionTaskTests(const TestNumber& number, const TestContext& context)
@@ -20,7 +20,7 @@ SyncFunctionTaskTests::SyncFunctionTaskTests(const TestNumber& number, const Tes
 void SyncFunctionTaskTests::CreationTest1(Test& test)
 {
     SyncFunctionTask task([]() -> void {});
-    ISHIKO_PASS();
+    ISHIKO_TEST_PASS();
 }
 
 void SyncFunctionTaskTests::RunTest1(Test& test)
@@ -28,6 +28,6 @@ void SyncFunctionTaskTests::RunTest1(Test& test)
     SyncFunctionTask task([]() -> void {});
     task.run();
 
-    ISHIKO_FAIL_IF_NOT(task.status() == Task::EStatus::eCompleted);
-    ISHIKO_PASS();
+    ISHIKO_TEST_FAIL_IF_NOT(task.status() == Task::EStatus::eCompleted);
+    ISHIKO_TEST_PASS();
 }
