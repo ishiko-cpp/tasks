@@ -4,7 +4,7 @@
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#include "USerTaskTests.hpp"
+#include "UserTaskTests.hpp"
 #include "Ishiko/UserTasks/SyncFunctionTask.h"
 
 using namespace Ishiko;
