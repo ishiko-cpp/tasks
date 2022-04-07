@@ -150,18 +150,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Task.cpp" />
+    <ClCompile Include="..\..\src\UserTask.cpp" />
     <ClCompile Include="..\..\src\SyncFunctionTask.cpp" />
     <ClCompile Include="..\..\src\Tasks.cpp" />
     <ClCompile Include="..\..\src\TaskRunner.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks.h" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\Task.h" />
+    <ClInclude Include="..\..\include\Ishiko\UserTasks.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\UserTask.hpp" />
     <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.h" />
     <ClInclude Include="..\..\include\Ishiko\UserTasks\Tasks.h" />
     <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.h" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.h" />
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

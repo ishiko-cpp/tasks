@@ -1,21 +1,19 @@
 /*
-    Copyright (c) 2018-2021 Xavier Leclercq
+    Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_USERTASKS_TASK_H_
-#define _ISHIKO_CPP_USERTASKS_TASK_H_
+#ifndef _ISHIKO_CPP_USERTASKS_USERTASK_HPP_
+#define _ISHIKO_CPP_USERTASKS_USERTASK_HPP_
 
 #include <vector>
 #include <memory>
 
 namespace Ishiko
 {
-namespace UserTasks
-{
 
-class Task
+class UserTask
 {
 public:
     enum class EStatus
@@ -31,7 +29,7 @@ public:
     public:
         virtual ~Observer() = default;
 
-        virtual void onStatusChanged(const Task& source, EStatus status);
+        virtual void onStatusChanged(const UserTask& source, EStatus status);
     };
 
     class Observers final
@@ -40,7 +38,7 @@ public:
         void add(std::shared_ptr<Observer> observer);
         void remove(std::shared_ptr<Observer> observer);
 
-        void notifyStatusChanged(const Task& source, EStatus status);
+        void notifyStatusChanged(const UserTask& source, EStatus status);
 
     private:
         void removeDeletedObservers();
@@ -49,8 +47,8 @@ public:
         std::vector<std::pair<std::weak_ptr<Observer>, size_t>> m_observers;
     };
 
-    Task();
-    virtual ~Task() noexcept = default;
+    UserTask();
+    virtual ~UserTask() noexcept = default;
 
     EStatus status() const;
 
@@ -64,7 +62,6 @@ private:
     Observers m_observers;
 };
 
-}
 }
 
 #endif
