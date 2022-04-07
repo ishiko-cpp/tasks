@@ -12,8 +12,6 @@
 
 namespace Ishiko
 {
-namespace UserTasks
-{
 
 class SyncFunctionTask : public UserTask
 {
@@ -26,7 +24,6 @@ private:
     std::function<void()> m_task;
 };
 
-}
 }
 
 #endif

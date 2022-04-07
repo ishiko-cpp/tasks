@@ -1,16 +1,15 @@
 /*
     Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
+    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#include "TaskTests.h"
+#include "USerTaskTests.hpp"
 #include "Ishiko/UserTasks/SyncFunctionTask.h"
 
 using namespace Ishiko;
-using namespace Ishiko::UserTasks;
 
-TaskTests::TaskTests(const TestNumber& number, const TestContext& context)
+UserTaskTests::UserTaskTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "Task tests", context)
 {
     append<HeapAllocationErrorsTest>("Creation test 1", CreationTest1);
@@ -19,7 +18,7 @@ TaskTests::TaskTests(const TestNumber& number, const TestContext& context)
     append<HeapAllocationErrorsTest>("run test 3", RunTest3);
 }
 
-void TaskTests::CreationTest1(Test& test)
+void UserTaskTests::CreationTest1(Test& test)
 {
     UserTask task;
 
@@ -28,7 +27,7 @@ void TaskTests::CreationTest1(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void TaskTests::RunTest1(Test& test)
+void UserTaskTests::RunTest1(Test& test)
 {
     UserTask task;
     task.run();
@@ -38,7 +37,7 @@ void TaskTests::RunTest1(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void TaskTests::RunTest2(Test& test)
+void UserTaskTests::RunTest2(Test& test)
 {
     SyncFunctionTask task([]() { throw std::exception(); });
     task.run();
@@ -47,7 +46,7 @@ void TaskTests::RunTest2(Test& test)
     ISHIKO_TEST_PASS();
 }
 
-void TaskTests::RunTest3(Test& test)
+void UserTaskTests::RunTest3(Test& test)
 {
     UserTask task;
 

@@ -1,19 +1,19 @@
 /*
     Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
+    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
-#define _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
+#ifndef _ISHIKO_CPP_USERTASKS_TESTS_USERTASKTESTS_HPP_
+#define _ISHIKO_CPP_USERTASKS_TESTS_USERTASKTESTS_HPP_
 
 #include "Ishiko/UserTasks/UserTask.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 
-class TaskTests : public Ishiko::TestSequence
+class UserTaskTests : public Ishiko::TestSequence
 {
 public:
-    TaskTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
+    UserTaskTests(const Ishiko::TestNumber& number, const Ishiko::TestContext& context);
 
 private:
     static void CreationTest1(Ishiko::Test& test);

@@ -1,13 +1,13 @@
 /*
     Copyright (c) 2015-2022 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
+    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#include "TaskTests.h"
 #include "SyncFunctionTaskTests.h"
 #include "TasksTests.h"
 #include "TaskRunnerTests.h"
+#include "UserTaskTests.hpp"
 #include "Ishiko/UserTasks/linkoptions.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 
@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     TestHarness theTestHarness("IshikoUserTasks");
 
     TestSequence& theTests = theTestHarness.tests();
-    theTests.append<TaskTests>();
+    theTests.append<UserTaskTests>();
     theTests.append<SyncFunctionTaskTests>();
     theTests.append<TasksTests>();
     theTests.append<TaskRunnerTests>();
