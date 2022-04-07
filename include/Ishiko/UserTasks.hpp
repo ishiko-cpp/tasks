@@ -7,11 +7,10 @@
 #ifndef _ISHIKO_CPP_USERTASKS_HPP_
 #define _ISHIKO_CPP_USERTASKS_HPP_
 
+#include "UserTasks/linkoptions.hpp"
 #include "UserTasks/SyncFunctionTask.h"
-#include "UserTasks/Task.h"
 #include "UserTasks/TaskRunner.h"
 #include "UserTasks/Tasks.h"
-
-#include "UserTasks/linkoptions.h"
+#include "UserTasks/UserTask.hpp"
 
 #endif

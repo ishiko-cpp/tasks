@@ -7,7 +7,7 @@
 #ifndef _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
 #define _ISHIKO_CPP_USERTASKS_TESTS_TASKTESTS_H_
 
-#include "Ishiko/UserTasks/Task.h"
+#include "Ishiko/UserTasks/UserTask.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 
 class TaskTests : public Ishiko::TestSequence
@@ -22,15 +22,15 @@ private:
     static void RunTest3(Ishiko::Test& test);
 };
 
-class TestTaskObserver : public Ishiko::UserTasks::Task::Observer
+class TestTaskObserver : public Ishiko::UserTask::Observer
 {
 public:
-    void onStatusChanged(const Ishiko::UserTasks::Task& source, Ishiko::UserTasks::Task::EStatus status) override;
+    void onStatusChanged(const Ishiko::UserTask& source, Ishiko::UserTask::EStatus status) override;
 
-    const std::vector<Ishiko::UserTasks::Task::EStatus> statuses() const;
+    const std::vector<Ishiko::UserTask::EStatus> statuses() const;
 
 public:
-    std::vector<Ishiko::UserTasks::Task::EStatus> m_statuses;
+    std::vector<Ishiko::UserTask::EStatus> m_statuses;
 };
 
 #endif

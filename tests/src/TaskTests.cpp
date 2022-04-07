@@ -21,19 +21,19 @@ TaskTests::TaskTests(const TestNumber& number, const TestContext& context)
 
 void TaskTests::CreationTest1(Test& test)
 {
-    Task task;
+    UserTask task;
 
-    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::ePending);
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), UserTask::EStatus::ePending);
 
     ISHIKO_TEST_PASS();
 }
 
 void TaskTests::RunTest1(Test& test)
 {
-    Task task;
+    UserTask task;
     task.run();
 
-    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), UserTask::EStatus::eCompleted);
 
     ISHIKO_TEST_PASS();
 }
@@ -43,32 +43,32 @@ void TaskTests::RunTest2(Test& test)
     SyncFunctionTask task([]() { throw std::exception(); });
     task.run();
 
-    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::eFailed);
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), UserTask::EStatus::eFailed);
     ISHIKO_TEST_PASS();
 }
 
 void TaskTests::RunTest3(Test& test)
 {
-    Task task;
+    UserTask task;
 
     std::shared_ptr<TestTaskObserver> observer = std::make_shared<TestTaskObserver>();
     task.observers().add(observer);
 
     task.run();
 
-    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), Task::EStatus::eCompleted);
+    ISHIKO_TEST_FAIL_IF_NEQ(task.status(), UserTask::EStatus::eCompleted);
     ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses().size(), 2);
-    ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses()[0], Task::EStatus::eRunning);
-    ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses()[1], Task::EStatus::eCompleted);
+    ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses()[0], UserTask::EStatus::eRunning);
+    ISHIKO_TEST_FAIL_IF_NEQ(observer->statuses()[1], UserTask::EStatus::eCompleted);
     ISHIKO_TEST_PASS();
 }
 
-void TestTaskObserver::onStatusChanged(const Task& source, Task::EStatus status)
+void TestTaskObserver::onStatusChanged(const UserTask& source, UserTask::EStatus status)
 {
     m_statuses.push_back(status);
 }
 
-const std::vector<Task::EStatus> TestTaskObserver::statuses() const
+const std::vector<UserTask::EStatus> TestTaskObserver::statuses() const
 {
     return m_statuses;
 }

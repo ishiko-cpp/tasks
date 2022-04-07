@@ -8,7 +8,6 @@
 #include "Ishiko/UserTasks/Tasks.h"
 
 using namespace Ishiko;
-using namespace Ishiko::UserTasks;
 
 TasksTests::TasksTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "Tasks tests", context)
@@ -30,7 +29,7 @@ void TasksTests::CreationTest1(Test& test)
 void TasksTests::AddTest1(Test& test)
 {
     Tasks tasks;
-    tasks.add(std::make_shared<Task>());
+    tasks.add(std::make_shared<UserTask>());
     
     ISHIKO_TEST_FAIL_IF_NOT(tasks.size() == 1);
     ISHIKO_TEST_PASS();
