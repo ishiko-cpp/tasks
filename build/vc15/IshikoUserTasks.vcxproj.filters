@@ -17,10 +17,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks.h">
+    <ClInclude Include="..\..\include\Ishiko\UserTasks.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\Task.h">
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\UserTask.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.h">
@@ -32,12 +32,12 @@
     <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.h">
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Task.cpp">
+    <ClCompile Include="..\..\src\UserTask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\SyncFunctionTask.cpp">

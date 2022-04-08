@@ -34,17 +34,17 @@ library IshikoUserTasks : IshikoCollections, IshikoErrors, Boost
 
     headers
     {
-        ../../include/Ishiko/UserTasks.h
-        ../../include/Ishiko/UserTasks/Task.h
+        ../../include/Ishiko/UserTasks.hpp
+        ../../include/Ishiko/UserTasks/UserTask.hpp
         ../../include/Ishiko/UserTasks/SyncFunctionTask.h
         ../../include/Ishiko/UserTasks/Tasks.h
         ../../include/Ishiko/UserTasks/TaskRunner.h
-        ../../include/Ishiko/UserTasks/linkoptions.h
+        ../../include/Ishiko/UserTasks/linkoptions.hpp
     }
 
     sources
     {
-        ../../src/Task.cpp
+        ../../src/UserTask.cpp
         ../../src/SyncFunctionTask.cpp
         ../../src/Tasks.cpp
         ../../src/TaskRunner.cpp

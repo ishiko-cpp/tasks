@@ -77,12 +77,12 @@ ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
 
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUserTasks-d,IshikoUserTasks).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUserTasks-d,IshikoUserTasks).a: $(_builddir)IshikoUserTasks_Task.o $(_builddir)IshikoUserTasks_SyncFunctionTask.o $(_builddir)IshikoUserTasks_Tasks.o $(_builddir)IshikoUserTasks_TaskRunner.o
-	$(AR) rc $@ $(_builddir)IshikoUserTasks_Task.o $(_builddir)IshikoUserTasks_SyncFunctionTask.o $(_builddir)IshikoUserTasks_Tasks.o $(_builddir)IshikoUserTasks_TaskRunner.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUserTasks-d,IshikoUserTasks).a: $(_builddir)IshikoUserTasks_UserTask.o $(_builddir)IshikoUserTasks_SyncFunctionTask.o $(_builddir)IshikoUserTasks_Tasks.o $(_builddir)IshikoUserTasks_TaskRunner.o
+	$(AR) rc $@ $(_builddir)IshikoUserTasks_UserTask.o $(_builddir)IshikoUserTasks_SyncFunctionTask.o $(_builddir)IshikoUserTasks_Tasks.o $(_builddir)IshikoUserTasks_TaskRunner.o
 	$(RANLIB) $@
 
-$(_builddir)IshikoUserTasks_Task.o: ../../src/Task.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UserTasks -std=c++11 ../../src/Task.cpp
+$(_builddir)IshikoUserTasks_UserTask.o: ../../src/UserTask.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UserTasks -std=c++11 ../../src/UserTask.cpp
 
 $(_builddir)IshikoUserTasks_SyncFunctionTask.o: ../../src/SyncFunctionTask.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UserTasks -std=c++11 ../../src/SyncFunctionTask.cpp

@@ -7,28 +7,25 @@
 #ifndef _ISHIKO_CPP_USERTASKS_TASKS_H_
 #define _ISHIKO_CPP_USERTASKS_TASKS_H_
 
-#include "Task.h"
+#include "UserTask.hpp"
 #include <Ishiko/Collections.hpp>
 #include <memory>
 
 namespace Ishiko
 {
-namespace UserTasks
-{
 
-class Tasks : private Collections::ObservableVector<std::shared_ptr<Task>, Tasks>
+class Tasks : private Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>
 {
 public:
-    typedef Collections::ObservableVector<std::shared_ptr<Task>, Tasks>::Observer Observer;
+    typedef Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observer Observer;
 
     size_t size() const;
 
-    void add(std::shared_ptr<Task> task);
+    void add(std::shared_ptr<UserTask> task);
 
-    Collections::ObservableVector<std::shared_ptr<Task>, Tasks>::Observers& observers();
+    Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observers& observers();
 };
 
-}
 }
 
 #endif

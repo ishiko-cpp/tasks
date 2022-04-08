@@ -39,7 +39,7 @@ void TaskRunner::join()
     }
 }
 
-void TaskRunner::post(std::shared_ptr<Task> task)
+void TaskRunner::post(std::shared_ptr<UserTask> task)
 {
     boost::asio::post(m_ioContext,
         [task]()
