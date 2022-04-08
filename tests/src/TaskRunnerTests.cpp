@@ -1,7 +1,7 @@
 /*
     Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/ishiko-cpp/tasks/blob/main/LICENSE.txt
+    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
 #include "TaskRunnerTests.h"
@@ -67,7 +67,7 @@ void TaskRunnerTests::PostTest1(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHIKO_TEST_FAIL_IF_NOT(task->status() == Task::EStatus::eCompleted);
+    ISHIKO_TEST_FAIL_IF_NOT(task->status() == UserTask::EStatus::eCompleted);
     ISHIKO_TEST_PASS();
 }
 
@@ -82,6 +82,6 @@ void TaskRunnerTests::PostTest2(Test& test)
     taskRunner.stop();
     taskRunner.join();
 
-    ISHIKO_TEST_FAIL_IF_NOT(task->status() == Task::EStatus::eCompleted);
+    ISHIKO_TEST_FAIL_IF_NOT(task->status() == UserTask::EStatus::eCompleted);
     ISHIKO_TEST_PASS();
 }

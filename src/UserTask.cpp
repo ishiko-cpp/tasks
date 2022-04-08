@@ -1,22 +1,20 @@
 /*
-    Copyright (c) 2018-2020 Xavier Leclercq
+    Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#include "Task.h"
+#include "UserTask.hpp"
 #include <algorithm>
 
 namespace Ishiko
 {
-namespace UserTasks
-{
 
-void Task::Observer::onStatusChanged(const Task& source, EStatus status)
+void UserTask::Observer::onStatusChanged(const UserTask& source, EStatus status)
 {
 }
 
-void Task::Observers::add(std::shared_ptr<Observer> observer)
+void UserTask::Observers::add(std::shared_ptr<Observer> observer)
 {
     auto it = std::find_if(m_observers.begin(), m_observers.end(),
         [&observer](const std::pair<std::weak_ptr<Observer>, size_t>& o)
@@ -34,7 +32,7 @@ void Task::Observers::add(std::shared_ptr<Observer> observer)
     }
 }
 
-void Task::Observers::remove(std::shared_ptr<Observer> observer)
+void UserTask::Observers::remove(std::shared_ptr<Observer> observer)
 {
     auto it = std::find_if(m_observers.begin(), m_observers.end(),
         [&observer](const std::pair<std::weak_ptr<Observer>, size_t>& o)
@@ -52,7 +50,7 @@ void Task::Observers::remove(std::shared_ptr<Observer> observer)
     }
 }
 
-void Task::Observers::notifyStatusChanged(const Task& source, EStatus status)
+void UserTask::Observers::notifyStatusChanged(const UserTask& source, EStatus status)
 {
     for (std::pair<std::weak_ptr<Observer>, size_t>& o : m_observers)
     {
@@ -68,7 +66,7 @@ void Task::Observers::notifyStatusChanged(const Task& source, EStatus status)
     }
 }
 
-void Task::Observers::removeDeletedObservers()
+void UserTask::Observers::removeDeletedObservers()
 {
     auto it = std::remove_if(m_observers.begin(), m_observers.end(),
         [](const std::pair<std::weak_ptr<Observer>, size_t>& o)
@@ -79,17 +77,17 @@ void Task::Observers::removeDeletedObservers()
     m_observers.erase(it, m_observers.end());
 }
 
-Task::Task()
+UserTask::UserTask()
     : m_status(EStatus::ePending)
 {
 }
 
-Task::EStatus Task::status() const
+UserTask::EStatus UserTask::status() const
 {
     return m_status;
 }
 
-void Task::run()
+void UserTask::run()
 {
     m_status = EStatus::eRunning;
     observers().notifyStatusChanged(*this, m_status);
@@ -105,14 +103,13 @@ void Task::run()
     observers().notifyStatusChanged(*this, m_status);
 }
 
-void Task::doRun()
+void UserTask::doRun()
 {
 }
 
-Task::Observers& Task::observers()
+UserTask::Observers& UserTask::observers()
 {
     return m_observers;
 }
 
-}
 }
