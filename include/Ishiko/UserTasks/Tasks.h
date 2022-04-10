@@ -14,16 +14,16 @@
 namespace Ishiko
 {
 
-class Tasks : private Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>
+class Tasks : private ObservableVector<std::shared_ptr<UserTask>, Tasks>
 {
 public:
-    typedef Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observer Observer;
+    typedef ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observer Observer;
 
     size_t size() const;
 
     void add(std::shared_ptr<UserTask> task);
 
-    Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observers& observers();
+    ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observers& observers();
 };
 
 }
