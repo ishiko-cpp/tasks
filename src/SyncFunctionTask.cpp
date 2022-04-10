@@ -4,7 +4,7 @@
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#include "SyncFunctionTask.h"
+#include "SyncFunctionTask.hpp"
 
 namespace Ishiko
 {

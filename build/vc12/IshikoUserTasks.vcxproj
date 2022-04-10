@@ -158,9 +158,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\UserTasks.hpp" />
     <ClInclude Include="..\..\include\Ishiko\UserTasks\UserTask.hpp" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.h" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\Tasks.h" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.h" />
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\Tasks.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.hpp" />
     <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
