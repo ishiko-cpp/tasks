@@ -23,13 +23,13 @@
     <ClInclude Include="..\..\include\Ishiko\UserTasks\UserTask.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.h">
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\Tasks.h">
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\Tasks.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.h">
+    <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.hpp">

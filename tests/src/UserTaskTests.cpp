@@ -5,7 +5,7 @@
 */
 
 #include "UserTaskTests.hpp"
-#include "Ishiko/UserTasks/SyncFunctionTask.h"
+#include "Ishiko/UserTasks/SyncFunctionTask.hpp"
 
 using namespace Ishiko;
 

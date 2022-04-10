@@ -5,7 +5,7 @@
 */
 
 #include "SyncFunctionTaskTests.h"
-#include "Ishiko/UserTasks/SyncFunctionTask.h"
+#include "Ishiko/UserTasks/SyncFunctionTask.hpp"
 
 using namespace Ishiko;
 
@@ -19,6 +19,7 @@ SyncFunctionTaskTests::SyncFunctionTaskTests(const TestNumber& number, const Tes
 void SyncFunctionTaskTests::CreationTest1(Test& test)
 {
     SyncFunctionTask task([]() -> void {});
+
     ISHIKO_TEST_PASS();
 }
 

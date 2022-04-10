@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_USERTASKS_TASKS_H_
-#define _ISHIKO_CPP_USERTASKS_TASKS_H_
+#ifndef _ISHIKO_CPP_USERTASKS_TASKS_HPP_
+#define _ISHIKO_CPP_USERTASKS_TASKS_HPP_
 
 #include "UserTask.hpp"
 #include <Ishiko/Collections.hpp>
@@ -14,16 +14,16 @@
 namespace Ishiko
 {
 
-class Tasks : private Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>
+class Tasks : private ObservableVector<std::shared_ptr<UserTask>, Tasks>
 {
 public:
-    typedef Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observer Observer;
+    typedef ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observer Observer;
 
     size_t size() const;
 
     void add(std::shared_ptr<UserTask> task);
 
-    Collections::ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observers& observers();
+    ObservableVector<std::shared_ptr<UserTask>, Tasks>::Observers& observers();
 };
 
 }

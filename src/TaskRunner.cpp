@@ -4,12 +4,10 @@
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#include "TaskRunner.h"
+#include "TaskRunner.hpp"
 #include <boost/asio/post.hpp>
 
 namespace Ishiko
-{
-namespace UserTasks
 {
 
 TaskRunner::TaskRunner(size_t numberOfThreads)
@@ -48,5 +46,4 @@ void TaskRunner::post(std::shared_ptr<UserTask> task)
         });
 }
 
-}
 }

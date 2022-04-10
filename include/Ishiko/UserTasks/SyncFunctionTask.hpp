@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_USERTASKS_SYNCFUNCTIONTASK_H_
-#define _ISHIKO_CPP_USERTASKS_SYNCFUNCTIONTASK_H_
+#ifndef _ISHIKO_CPP_USERTASKS_SYNCFUNCTIONTASK_HPP_
+#define _ISHIKO_CPP_USERTASKS_SYNCFUNCTIONTASK_HPP_
 
 #include "UserTask.hpp"
 #include <functional>

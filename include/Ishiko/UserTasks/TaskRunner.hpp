@@ -4,8 +4,8 @@
     See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
 */
 
-#ifndef _ISHIKO_CPP_USERTASKS_TASKRUNNER_H_
-#define _ISHIKO_CPP_USERTASKS_TASKRUNNER_H_
+#ifndef _ISHIKO_CPP_USERTASKS_TASKRUNNER_HPP_
+#define _ISHIKO_CPP_USERTASKS_TASKRUNNER_HPP_
 
 #include "UserTask.hpp"
 #include <boost/asio/io_context.hpp>
@@ -14,8 +14,6 @@
 #include <vector>
 
 namespace Ishiko
-{
-namespace UserTasks
 {
 
 class TaskRunner
@@ -35,7 +33,6 @@ private:
     std::vector<std::thread> m_threads;
 };
 
-}
 }
 
 #endif
