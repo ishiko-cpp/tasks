@@ -5,7 +5,7 @@
 */
 
 #include "TasksTests.h"
-#include "Ishiko/UserTasks/Tasks.h"
+#include "Ishiko/UserTasks/Tasks.hpp"
 
 using namespace Ishiko;
 

@@ -5,11 +5,10 @@
 */
 
 #include "TaskRunnerTests.h"
-#include "Ishiko/UserTasks/TaskRunner.h"
-#include "Ishiko/UserTasks/SyncFunctionTask.h"
+#include "Ishiko/UserTasks/TaskRunner.hpp"
+#include "Ishiko/UserTasks/SyncFunctionTask.hpp"
 
 using namespace Ishiko;
-using namespace Ishiko::UserTasks;
 
 TaskRunnerTests::TaskRunnerTests(const TestNumber& number, const TestContext& context)
     : TestSequence(number, "TaskRunner tests", context)
