@@ -36,9 +36,9 @@ library IshikoUserTasks : IshikoCollections, IshikoErrors, Boost
     {
         ../../include/Ishiko/UserTasks.hpp
         ../../include/Ishiko/UserTasks/UserTask.hpp
-        ../../include/Ishiko/UserTasks/SyncFunctionTask.h
-        ../../include/Ishiko/UserTasks/Tasks.h
-        ../../include/Ishiko/UserTasks/TaskRunner.h
+        ../../include/Ishiko/UserTasks/SyncFunctionTask.hpp
+        ../../include/Ishiko/UserTasks/Tasks.hpp
+        ../../include/Ishiko/UserTasks/TaskRunner.hpp
         ../../include/Ishiko/UserTasks/linkoptions.hpp
     }
 
