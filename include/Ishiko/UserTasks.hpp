@@ -8,9 +8,9 @@
 #define _ISHIKO_CPP_USERTASKS_HPP_
 
 #include "UserTasks/linkoptions.hpp"
-#include "UserTasks/SyncFunctionTask.h"
-#include "UserTasks/TaskRunner.h"
-#include "UserTasks/Tasks.h"
+#include "UserTasks/SyncFunctionTask.hpp"
+#include "UserTasks/TaskRunner.hpp"
+#include "UserTasks/Tasks.hpp"
 #include "UserTasks/UserTask.hpp"
 
 #endif
