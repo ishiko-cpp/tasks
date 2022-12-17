@@ -1,6 +1,6 @@
-# Ishiko/C++ UserTasks
+# Ishiko/C++ Workflows
 
-The Ishiko/C++ UserTasks component provides functionality to create and run user-defined tasks.
+The Ishiko/C++ Workflows component provides functionality to create and run user-defined tasks and workflows.
 
 # Contents
 
@@ -11,9 +11,9 @@ The Ishiko/C++ UserTasks component provides functionality to create and run user
 
 # Project Status
 
-[![ishiko-cpp](https://circleci.com/gh/ishiko-cpp/user-tasks.svg?style=shield)](https://circleci.com/gh/ishiko-cpp/user-tasks)
+[![ishiko-cpp](https://circleci.com/gh/ishiko-cpp/workflows.svg?style=shield)](https://circleci.com/gh/ishiko-cpp/workflows)
 
-This project is intended for use by its author only.
+This project is in early development and not ready for public use yet.
 
 # Usage
 
@@ -25,6 +25,6 @@ None.
 
 ## License
 
-Copyright (c) 2016-2021 Xavier Leclercq\
+Copyright (c) 2016-2022 Xavier Leclercq\
 Released under the MIT License\
-See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
+See https://github.com/ishiko-cpp/workflows/blob/main/LICENSE.txt
