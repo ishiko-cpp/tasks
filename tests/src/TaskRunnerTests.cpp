@@ -6,7 +6,7 @@
 
 #include "TaskRunnerTests.h"
 #include "Ishiko/Workflows/TaskRunner.hpp"
-#include "Ishiko/UserTasks/SyncFunctionTask.hpp"
+#include "Ishiko/Workflows/SyncFunctionTask.hpp"
 
 using namespace Ishiko;
 
