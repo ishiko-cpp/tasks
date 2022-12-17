@@ -1,14 +1,14 @@
 /*
     Copyright (c) 2015-2022 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
+    See https://github.com/ishiko-cpp/workflows/blob/main/LICENSE.txt
 */
 
 #include "SyncFunctionTaskTests.h"
 #include "TasksTests.h"
 #include "TaskRunnerTests.h"
 #include "UserTaskTests.hpp"
-#include "Ishiko/UserTasks/linkoptions.hpp"
+#include "Ishiko/Workflows/linkoptions.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 
 using namespace Ishiko;

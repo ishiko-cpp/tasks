@@ -78,28 +78,28 @@ ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
 
 # ------------
 
-all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUserTasks-d,IshikoUserTasks).a
+all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoWorkflows-d,IshikoWorkflows).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUserTasks-d,IshikoUserTasks).a: $(_builddir)IshikoUserTasks_UserTask.o $(_builddir)IshikoUserTasks_SyncFunctionTask.o $(_builddir)IshikoUserTasks_Tasks.o $(_builddir)IshikoUserTasks_TaskRunner.o
-	$(AR) rc $@ $(_builddir)IshikoUserTasks_UserTask.o $(_builddir)IshikoUserTasks_SyncFunctionTask.o $(_builddir)IshikoUserTasks_Tasks.o $(_builddir)IshikoUserTasks_TaskRunner.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoWorkflows-d,IshikoWorkflows).a: $(_builddir)IshikoWorkflows_UserTask.o $(_builddir)IshikoWorkflows_SyncFunctionTask.o $(_builddir)IshikoWorkflows_Tasks.o $(_builddir)IshikoWorkflows_TaskRunner.o
+	$(AR) rc $@ $(_builddir)IshikoWorkflows_UserTask.o $(_builddir)IshikoWorkflows_SyncFunctionTask.o $(_builddir)IshikoWorkflows_Tasks.o $(_builddir)IshikoWorkflows_TaskRunner.o
 	$(RANLIB) $@
 
-$(_builddir)IshikoUserTasks_UserTask.o: ../../src/UserTask.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UserTasks -std=c++11 ../../src/UserTask.cpp
+$(_builddir)IshikoWorkflows_UserTask.o: ../../src/UserTask.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Workflows -std=c++11 ../../src/UserTask.cpp
 
-$(_builddir)IshikoUserTasks_SyncFunctionTask.o: ../../src/SyncFunctionTask.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UserTasks -std=c++11 ../../src/SyncFunctionTask.cpp
+$(_builddir)IshikoWorkflows_SyncFunctionTask.o: ../../src/SyncFunctionTask.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Workflows -std=c++11 ../../src/SyncFunctionTask.cpp
 
-$(_builddir)IshikoUserTasks_Tasks.o: ../../src/Tasks.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UserTasks -std=c++11 ../../src/Tasks.cpp
+$(_builddir)IshikoWorkflows_Tasks.o: ../../src/Tasks.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Workflows -std=c++11 ../../src/Tasks.cpp
 
-$(_builddir)IshikoUserTasks_TaskRunner.o: ../../src/TaskRunner.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/UserTasks -std=c++11 ../../src/TaskRunner.cpp
+$(_builddir)IshikoWorkflows_TaskRunner.o: ../../src/TaskRunner.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I../../include/Ishiko/Workflows -std=c++11 ../../src/TaskRunner.cpp
 
 clean:
 	rm -f $(_builddir)*.o
 	rm -f $(_builddir)*.d
-	rm -f ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoUserTasks-d,IshikoUserTasks).a
+	rm -f ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoWorkflows-d,IshikoWorkflows).a
 
 .PHONY: all clean
 

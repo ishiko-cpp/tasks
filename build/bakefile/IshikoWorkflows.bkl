@@ -6,14 +6,14 @@ import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 toolsets = gnu vs2019 vs2017 vs2015 vs2013;
 
 gnu.makefile = ../gnumake/GNUmakefile;
-vs2019.solutionfile = ../vc16/IshikoUserTasks.sln;
-vs2017.solutionfile = ../vc15/IshikoUserTasks.sln;
-vs2015.solutionfile = ../vc14/IshikoUserTasks.sln;
-vs2013.solutionfile = ../vc12/IshikoUserTasks.sln;
+vs2019.solutionfile = ../vc16/IshikoWorkflows.sln;
+vs2017.solutionfile = ../vc15/IshikoWorkflows.sln;
+vs2015.solutionfile = ../vc14/IshikoWorkflows.sln;
+vs2013.solutionfile = ../vc12/IshikoWorkflows.sln;
 
-library IshikoUserTasks : IshikoCollections, IshikoErrors, Boost
+library IshikoWorkflows : IshikoCollections, IshikoErrors, Boost
 {
-    includedirs += ../../include/Ishiko/UserTasks;
+    includedirs += ../../include/Ishiko/Workflows;
 
     if ($(toolset) == gnu)
     {
@@ -29,17 +29,17 @@ library IshikoUserTasks : IshikoCollections, IshikoErrors, Boost
 
     if ($(config) == Debug)
     {
-        basename = IshikoUserTasks-d;
+        basename = IshikoWorkflows-d;
     }
 
     headers
     {
         ../../include/Ishiko/UserTasks.hpp
-        ../../include/Ishiko/UserTasks/UserTask.hpp
-        ../../include/Ishiko/UserTasks/SyncFunctionTask.hpp
-        ../../include/Ishiko/UserTasks/Tasks.hpp
-        ../../include/Ishiko/UserTasks/TaskRunner.hpp
-        ../../include/Ishiko/UserTasks/linkoptions.hpp
+        ../../include/Ishiko/Workflows/UserTask.hpp
+        ../../include/Ishiko/Workflows/SyncFunctionTask.hpp
+        ../../include/Ishiko/Workflows/Tasks.hpp
+        ../../include/Ishiko/Workflows/TaskRunner.hpp
+        ../../include/Ishiko/Workflows/linkoptions.hpp
     }
 
     sources
