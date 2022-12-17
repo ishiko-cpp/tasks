@@ -54,7 +54,7 @@ endif
 #      ISHIKO_CPP_XML_ROOT            Path to the Ishiko XML installation
 #      ISHIKO_CPP_TESTFRAMEWORK_ROOT  Path to the Ishiko TestFramework installation
 #      ISHIKO_CPP_COLLECTIONS_ROOT    Path to the Ishiko Collections installation
-#      ISHIKO_CPP_USERTASKS_ROOT      Path to the Ishiko/UserTasks installation
+#      ISHIKO_CPP_USERTASKS_ROOT      Path to the Ishiko/Workflows installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -109,35 +109,35 @@ ISHIKO_CPP_XML_ROOT ?= $(ISHIKO_CPP)/xml
 ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/test-framework
 # Path to the Ishiko Collections installation
 ISHIKO_CPP_COLLECTIONS_ROOT ?= $(ISHIKO_CPP)/collections
-# Path to the Ishiko/UserTasks installation
-ISHIKO_CPP_USERTASKS_ROOT ?= $(ISHIKO_CPP)/user-tasks
+# Path to the Ishiko/Workflows installation
+ISHIKO_CPP_USERTASKS_ROOT ?= $(ISHIKO_CPP)/workflows
 
 # ------------
 
-all: $(_builddir)IshikoUserTasksTests
+all: $(_builddir)IshikoWorkflowsTests
 
-$(_builddir)IshikoUserTasksTests: $(_builddir)IshikoUserTasksTests_main.o $(_builddir)IshikoUserTasksTests_SyncFunctionTaskTests.o $(_builddir)IshikoUserTasksTests_TasksTests.o $(_builddir)IshikoUserTasksTests_TaskRunnerTests.o $(_builddir)IshikoUserTasksTests_UserTaskTests.o
-	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoUserTasksTests_main.o $(_builddir)IshikoUserTasksTests_SyncFunctionTaskTests.o $(_builddir)IshikoUserTasksTests_TasksTests.o $(_builddir)IshikoUserTasksTests_TaskRunnerTests.o $(_builddir)IshikoUserTasksTests_UserTaskTests.o -L$(ISHIKO_CPP_COLLECTIONS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_USERTASKS_ROOT)/lib -L$(ISHIKO_CPP_MEMORY_ROOT)/lib -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_CONFIGURATION_ROOT)/lib -L$(ISHIKO_CPP_IO_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_XML_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_FMT_ROOT)/lib -L$(ISHIKO_CPP_TIME_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoUserTasks -lIshikoTestFrameworkCore -lIshikoConfiguration -lIshikoXML -lIshikoFileSystem -lIshikoIO -lIshikoProcess -lIshikoTime -lIshikoText -lIshikoErrors -lfmt -lboost_filesystem -pthread
+$(_builddir)IshikoWorkflowsTests: $(_builddir)IshikoWorkflowsTests_main.o $(_builddir)IshikoWorkflowsTests_SyncFunctionTaskTests.o $(_builddir)IshikoWorkflowsTests_TasksTests.o $(_builddir)IshikoWorkflowsTests_TaskRunnerTests.o $(_builddir)IshikoWorkflowsTests_UserTaskTests.o
+	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoWorkflowsTests_main.o $(_builddir)IshikoWorkflowsTests_SyncFunctionTaskTests.o $(_builddir)IshikoWorkflowsTests_TasksTests.o $(_builddir)IshikoWorkflowsTests_TaskRunnerTests.o $(_builddir)IshikoWorkflowsTests_UserTaskTests.o -L$(ISHIKO_CPP_COLLECTIONS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_USERTASKS_ROOT)/lib -L$(ISHIKO_CPP_MEMORY_ROOT)/lib -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_CONFIGURATION_ROOT)/lib -L$(ISHIKO_CPP_IO_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_XML_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_FMT_ROOT)/lib -L$(ISHIKO_CPP_TIME_ROOT)/lib -L$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/lib -lIshikoWorkflows -lIshikoTestFrameworkCore -lIshikoConfiguration -lIshikoXML -lIshikoFileSystem -lIshikoIO -lIshikoProcess -lIshikoTime -lIshikoText -lIshikoErrors -lfmt -lboost_filesystem -pthread
 
-$(_builddir)IshikoUserTasksTests_main.o: ../../src/main.cpp
+$(_builddir)IshikoWorkflowsTests_main.o: ../../src/main.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_USERTASKS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/main.cpp
 
-$(_builddir)IshikoUserTasksTests_SyncFunctionTaskTests.o: ../../src/SyncFunctionTaskTests.cpp
+$(_builddir)IshikoWorkflowsTests_SyncFunctionTaskTests.o: ../../src/SyncFunctionTaskTests.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_USERTASKS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/SyncFunctionTaskTests.cpp
 
-$(_builddir)IshikoUserTasksTests_TasksTests.o: ../../src/TasksTests.cpp
+$(_builddir)IshikoWorkflowsTests_TasksTests.o: ../../src/TasksTests.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_USERTASKS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/TasksTests.cpp
 
-$(_builddir)IshikoUserTasksTests_TaskRunnerTests.o: ../../src/TaskRunnerTests.cpp
+$(_builddir)IshikoWorkflowsTests_TaskRunnerTests.o: ../../src/TaskRunnerTests.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_USERTASKS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/TaskRunnerTests.cpp
 
-$(_builddir)IshikoUserTasksTests_UserTaskTests.o: ../../src/UserTaskTests.cpp
+$(_builddir)IshikoWorkflowsTests_UserTaskTests.o: ../../src/UserTaskTests.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -DPUGIXML_HEADER_ONLY -I$(ISHIKO_CPP_COLLECTIONS_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_USERTASKS_ROOT)/include -I$(ISHIKO_CPP_MEMORY_ROOT)/include -I$(ISHIKO_CPP_BASEPLATFORM_ROOT)/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_CONFIGURATION_ROOT)/include -I$(ISHIKO_CPP_IO_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PUGIXML_ROOT)/src -I$(ISHIKO_CPP_XML_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_FMT_ROOT)/include -I$(ISHIKO_CPP_TIME_ROOT)/include -I$(ISHIKO_CPP_TESTFRAMEWORK_ROOT)/include -std=c++11 ../../src/UserTaskTests.cpp
 
 clean:
 	rm -f $(_builddir)*.o
 	rm -f $(_builddir)*.d
-	rm -f $(_builddir)IshikoUserTasksTests
+	rm -f $(_builddir)IshikoWorkflowsTests
 
 .PHONY: all clean
 

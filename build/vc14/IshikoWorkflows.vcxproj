@@ -21,10 +21,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{05EF7D92-9CC2-56C4-8367-798C55BEBD7F}</ProjectGuid>
+    <ProjectGuid>{303E3339-A21E-55AC-B046-337E0339F9E3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>IshikoUserTasks</RootNamespace>
-    <ProjectName>IshikoUserTasks</ProjectName>
+    <RootNamespace>IshikoWorkflows</RootNamespace>
+    <ProjectName>IshikoWorkflows</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -68,11 +68,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <TargetName>IshikoUserTasks-d</TargetName>
+    <TargetName>IshikoWorkflows-d</TargetName>
     <OutDir>..\bakefile\..\..\lib\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>IshikoUserTasks-d</TargetName>
+    <TargetName>IshikoWorkflows-d</TargetName>
     <OutDir>..\bakefile\..\..\lib\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -88,7 +88,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\UserTasks;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\Workflows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -103,7 +103,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\UserTasks;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\Workflows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -120,7 +120,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\UserTasks;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\Workflows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -139,7 +139,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\UserTasks;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ISHIKO_CPP)/collections\include;$(ISHIKO_CPP)/base-platform\include;$(ISHIKO_CPP)/errors\include;$(ISHIKO_CPP_THIRD_PARTY_BOOST);..\..\include\Ishiko\Workflows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -157,11 +157,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\UserTasks.hpp" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\UserTask.hpp" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.hpp" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\Tasks.hpp" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.hpp" />
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Workflows\UserTask.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Workflows\SyncFunctionTask.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Workflows\Tasks.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Workflows\TaskRunner.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Workflows\linkoptions.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

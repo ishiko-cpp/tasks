@@ -4,8 +4,8 @@ import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
 setting ISHIKO_CPP_USERTASKS_ROOT
 {
-    help = "Path to the Ishiko/UserTasks installation";
-    default = '$(ISHIKO_CPP)/user-tasks';
+    help = "Path to the Ishiko/Workflows installation";
+    default = '$(ISHIKO_CPP)/workflows';
 }
 
 template IshikoUserTasks : IshikoCollections, Boost
