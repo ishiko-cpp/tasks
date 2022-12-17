@@ -54,7 +54,7 @@ endif
 #      ISHIKO_CPP_XML_ROOT            Path to the Ishiko XML installation
 #      ISHIKO_CPP_TESTFRAMEWORK_ROOT  Path to the Ishiko TestFramework installation
 #      ISHIKO_CPP_COLLECTIONS_ROOT    Path to the Ishiko Collections installation
-#      ISHIKO_CPP_USERTASKS_ROOT      Path to the Ishiko/UserTasks installation
+#      ISHIKO_CPP_USERTASKS_ROOT      Path to the Ishiko/Workflows installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -109,8 +109,8 @@ ISHIKO_CPP_XML_ROOT ?= $(ISHIKO_CPP)/xml
 ISHIKO_CPP_TESTFRAMEWORK_ROOT ?= $(ISHIKO_CPP)/test-framework
 # Path to the Ishiko Collections installation
 ISHIKO_CPP_COLLECTIONS_ROOT ?= $(ISHIKO_CPP)/collections
-# Path to the Ishiko/UserTasks installation
-ISHIKO_CPP_USERTASKS_ROOT ?= $(ISHIKO_CPP)/user-tasks
+# Path to the Ishiko/Workflows installation
+ISHIKO_CPP_USERTASKS_ROOT ?= $(ISHIKO_CPP)/workflows
 
 # ------------
 

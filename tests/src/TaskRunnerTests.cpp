@@ -1,11 +1,11 @@
 /*
     Copyright (c) 2018-2022 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/ishiko-cpp/user-tasks/blob/main/LICENSE.txt
+    See https://github.com/ishiko-cpp/worflows/blob/main/LICENSE.txt
 */
 
 #include "TaskRunnerTests.h"
-#include "Ishiko/UserTasks/TaskRunner.hpp"
+#include "Ishiko/Workflows/TaskRunner.hpp"
 #include "Ishiko/UserTasks/SyncFunctionTask.hpp"
 
 using namespace Ishiko;
