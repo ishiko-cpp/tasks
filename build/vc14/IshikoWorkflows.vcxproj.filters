@@ -20,19 +20,19 @@
     <ClInclude Include="..\..\include\Ishiko\UserTasks.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\UserTask.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Workflows\UserTask.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\SyncFunctionTask.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Workflows\SyncFunctionTask.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\Tasks.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Workflows\Tasks.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\TaskRunner.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Workflows\TaskRunner.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks\linkoptions.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Workflows\linkoptions.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

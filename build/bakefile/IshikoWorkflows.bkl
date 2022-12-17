@@ -35,11 +35,11 @@ library IshikoWorkflows : IshikoCollections, IshikoErrors, Boost
     headers
     {
         ../../include/Ishiko/UserTasks.hpp
-        ../../include/Ishiko/UserTasks/UserTask.hpp
-        ../../include/Ishiko/UserTasks/SyncFunctionTask.hpp
-        ../../include/Ishiko/UserTasks/Tasks.hpp
-        ../../include/Ishiko/UserTasks/TaskRunner.hpp
-        ../../include/Ishiko/UserTasks/linkoptions.hpp
+        ../../include/Ishiko/Workflows/UserTask.hpp
+        ../../include/Ishiko/Workflows/SyncFunctionTask.hpp
+        ../../include/Ishiko/Workflows/Tasks.hpp
+        ../../include/Ishiko/Workflows/TaskRunner.hpp
+        ../../include/Ishiko/Workflows/linkoptions.hpp
     }
 
     sources
