@@ -34,7 +34,7 @@ library IshikoWorkflows : IshikoCollections, IshikoErrors, Boost
 
     headers
     {
-        ../../include/Ishiko/UserTasks.hpp
+        ../../include/Ishiko/Workflows.hpp
         ../../include/Ishiko/Workflows/UserTask.hpp
         ../../include/Ishiko/Workflows/SyncFunctionTask.hpp
         ../../include/Ishiko/Workflows/Tasks.hpp

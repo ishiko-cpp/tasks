@@ -17,7 +17,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks.hpp">
+    <ClInclude Include="..\..\include\Ishiko\Workflows.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\Workflows\UserTask.hpp">

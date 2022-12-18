@@ -156,7 +156,7 @@
     <ClCompile Include="..\..\src\TaskRunner.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Ishiko\UserTasks.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\Workflows.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Workflows\UserTask.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Workflows\SyncFunctionTask.hpp" />
     <ClInclude Include="..\..\include\Ishiko\Workflows\Tasks.hpp" />
