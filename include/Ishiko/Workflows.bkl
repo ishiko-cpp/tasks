@@ -1,11 +1,11 @@
-ishikopath = envvar("ISHIKO_CPP");
+ishikopath = envvar("ISHIKO_CPP_ROOT");
 import $(ishikopath)/collections/include/Ishiko/Collections.bkl;
 import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
 setting ISHIKO_CPP_WORKFLOWS_ROOT
 {
-    help = "Path to the Ishiko/Workflows installation";
-    default = '$(ISHIKO_CPP)/workflows';
+    help = "Path to the Ishiko/C++ Workflows installation";
+    default = '$(ISHIKO_CPP_ROOT)/workflows';
 }
 
 template IshikoWorkflows : IshikoCollections, Boost
