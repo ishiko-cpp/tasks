@@ -1,5 +1,6 @@
 ishikopath = envvar("ISHIKO_CPP_ROOT");
 import $(ishikopath)/collections/include/Ishiko/Collections.bkl;
+import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
 import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
 setting ISHIKO_CPP_WORKFLOWS_ROOT
@@ -8,7 +9,7 @@ setting ISHIKO_CPP_WORKFLOWS_ROOT
     default = '$(ISHIKO_CPP_ROOT)/workflows';
 }
 
-template IshikoWorkflows : IshikoCollections, Boost
+template IshikoWorkflows : IshikoCollections, IshikoErrors, Boost
 {
     includedirs += $(ISHIKO_CPP_WORKFLOWS_ROOT)/include;
 
