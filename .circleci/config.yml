@@ -56,10 +56,10 @@ jobs:
           command: cd /workspace/projects/ishiko/cpp && git clone https://github.com/ishiko-cpp/test-framework.git && cd test-framework/core/build-files/gnumake && make
       - run:
           name: Test build
-          command: cd /workspace/projects/ishiko/cpp/workflows/tests/build/gnumake && make
+          command: cd /workspace/projects/ishiko/cpp/workflows/tests/build-files/gnumake && make
       - run:
           name: Run the tests
-          command: cd /workspace/projects/ishiko/cpp/workflows/tests/build/gnumake && ./IshikoWorkflowsTests
+          command: cd /workspace/projects/ishiko/cpp/workflows/tests/build-files/gnumake && ./IshikoWorkflowsTests
 workflows:
   version: 2
   continuous_build:
